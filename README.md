@@ -12,13 +12,14 @@ de LLMs ([vllm](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
       pip install -r requirements.txt
   
 - Renombrar el archivo "config_yaml.txt" por "config.yaml" dentro del directorio "my_config".
-- Modificar el nuevo archivo "config.yaml" con la información sobre su proveedor de servicios de LLMs según lo siguiente:
+- Modificar el nuevo archivo "config.yaml" con la información sobre su proveedor de servicios de LLMs según las instrucciones del mismo archivo.
+- Lanzar la API con el siguiente comando:
 
-  "provider": El nombre del proveedor del LLM, debe ser "vllm" u "openrouter".
+      uvicorn v2_3_main:app --reload --host 0.0.0.0 --port 8001
+
+  Siéntase libre de cambiar la información del **host** y el **port**.
   
-  "api_keys":
-  
-    "openrouter": api_key del proveedor "openrouter"
+### Instalación y Configuración
 
 ## English
 This repository contains everything needed to launch an API with  [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vllm](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
