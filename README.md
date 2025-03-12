@@ -60,5 +60,5 @@ Aquí hay algo de contenido en la sección de ejemplo.
 
 ---
 
-[Ir a la sección de ejemplo](#/classify/)
+[Ir a la sección de ejemplo](#classify)
 
