@@ -6,8 +6,14 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 - [vLLM](https://docs.vllm.ai/en/latest/)
   vLLM es una biblioteca de código abierto diseñada para optimizar el uso de modelos de lenguaje a gran escala (LLMs) en arquitecturas distribuidas.
   vLLM permite que los modelos de lenguaje de gran tamaño se ejecuten de manera más rápida y eficiente, utilizando múltiples recursos de
-  hardware (como GPU y CPUs) de forma paralela, mejorando la escalabilidad en comparación con otras soluciones. Además, vLLM soporta LLMs de código
-  abierto
+  hardware (como GPU y CPUs) de forma paralela, mejorando la escalabilidad en entornos de producción. Además, vLLM soporta LLMs de código
+  abierto, e.g. [HuggingFace](https://huggingface.co/).
+  Si está interesado en utilizar vLLM como proveedor, debe considerar sus recursos de hardware y seguir las [instrucciones](https://docs.vllm.ai/en/latest/getting_started/installation.html) de instalación.
+
+- [OpenRouter ](https://openrouter.ai/)
+  OpenRouter es una plataforma de código abierto diseñada para la creación y gestión de APIs para modelos de lenguaje, específicamente orientada a
+  facilitar la integración y el uso de modelos de LLMs.
+  Si está interesado en utilizar OpenRouter como proveedor, revise su [documentación](https://openrouter.ai/docs/quickstart).
 
 ### Instalación y Configuración
 - Clonar este repositorio.
