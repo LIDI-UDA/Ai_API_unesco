@@ -9,7 +9,7 @@ de LLMs ([vllm](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 - Crear y utilizar un entorno virtual (Recomendado) con python 3.10. Puede utilizar [miniconda3](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions), [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) u otros.
 - Moverse hasta la raíz del repositorio clonado e instalar las librerías y paquetes necesarios con
   
-    `pip install -r requirements.txt`
+      pip install -r requirements.txt
   
 - Renombrar el archivo "config_yaml.txt" por "config.yaml" dentro del directorio "my_config".
 - Modificar el nuevo archivo "config.yaml" con la información sobre su proveedor de servicios de LLMs según lo siguiente:
