@@ -15,7 +15,9 @@ de LLMs ([vllm](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 - Modificar el nuevo archivo "config.yaml" con la información sobre su proveedor de servicios de LLMs según lo siguiente:
 
   "provider": El nombre del proveedor del LLM, debe ser "vllm" u "openrouter".
+  
   "api_keys":
+  
     "openrouter": api_key del proveedor "openrouter"
 
 ## English
