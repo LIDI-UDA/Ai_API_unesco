@@ -25,11 +25,16 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
 #### /classify/
 - Descripción: Este endpoint se encarga de clasificar un artículo a partir de su título y resumen (abstract), utilizando un LLMS y las categorías predefinidas de la UNESCO. El título y el resumen son enviados como parámetros y el modelo devuelve información sobre la clasificación del artículo.
 - Método: **POST**
-- First item
-- Second item
-- Third item
-    - Indented item
-    - Indented item
+- Datos de entrada:
+    - Tipo de dato: **JSON**
+    - Estructura esperada:
+
+          { "title": "Título del artículo",
+            "abstract": "Resumen o abstract del artículo"
+          }
+      
+    - Nota: El campo title (título) es obligatorio, mientras que el campo abstract (resumen) es opcional; si no se incluye, la clasificación se       realizará solo con el título del artículo.
+      
 - Fourth item
 
 ## English
