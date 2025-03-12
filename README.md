@@ -56,11 +56,9 @@ Steps to launch the API:
 
 # Título principal
 
-## Mi sección de ejemplo
-
 Aquí hay algo de contenido en la sección de ejemplo.
 
 ---
 
-[Ir a la sección de ejemplo](#mi-sección-de-ejemplo)
+[Ir a la sección de ejemplo](#/classify/)
 
