@@ -16,8 +16,7 @@ de LLMs ([vllm](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 
   "provider": El nombre del proveedor del LLM, debe ser "vllm" u "openrouter".
   "api_keys":
-  
-            "openrouter": api_key del proveedor "openrouter"
+    "openrouter": api_key del proveedor "openrouter"
 
 ## English
 This repository contains everything needed to launch an API with  [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vllm](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
