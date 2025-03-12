@@ -4,10 +4,9 @@
 Este repositorio contiene todo lo necesario para lanzar una API con [FastAPI](https://fastapi.tiangolo.com/) que utiliza dos proveedores distintos
 de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrouter.ai/)) y clasifica artículos científicos en las categorías de investigación definidas por la UNESCO.
 - [vLLM](https://docs.vllm.ai/en/latest/)
-  vLLM es una biblioteca de código abierto diseñada para optimizar el uso de modelos de lenguaje a gran escala (LLMs) en arquitecturas distribuidas.
-  vLLM permite que los modelos de lenguaje de gran tamaño se ejecuten de manera más rápida y eficiente, utilizando múltiples recursos de
-  hardware (como GPU y CPUs) de forma paralela, mejorando la escalabilidad en entornos de producción. Además, vLLM soporta LLMs de código
-  abierto, e.g. [HuggingFace](https://huggingface.co/).
+  vLLM es una biblioteca de código abierto lista para producción diseñada para optimizar el uso de LLMs en arquitecturas distribuidas.
+  vLLM permite que los modelos de lenguaje se ejecuten de manera más rápida y eficiente, además de soportar arquitecturas distribuidas y LLMs de
+  código abierto, e.g. [HuggingFace](https://huggingface.co/).
   Si está interesado en utilizar vLLM como proveedor, debe considerar sus recursos de hardware y seguir las [instrucciones](https://docs.vllm.ai/en/latest/getting_started/installation.html) de instalación.
 
 - [OpenRouter ](https://openrouter.ai/)
