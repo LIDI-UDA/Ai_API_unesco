@@ -4,17 +4,17 @@
 Este repositorio contiene todo lo necesario para lanzar una API con [FastAPI](https://fastapi.tiangolo.com/) que utiliza dos proveedores distintos
 de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrouter.ai/)) y clasifica artículos científicos en las categorías de investigación definidas por la UNESCO.
 - [vLLM](https://docs.vllm.ai/en/latest/)
-  vLLM es una biblioteca de código abierto lista para producción diseñada para optimizar el uso de LLMs en arquitecturas distribuidas.
+  es una biblioteca de código abierto lista para producción diseñada para optimizar el uso de LLMs.
   vLLM permite que los modelos de lenguaje se ejecuten de manera más rápida y eficiente, además de soportar arquitecturas distribuidas y LLMs de
   código abierto, e.g. [HuggingFace](https://huggingface.co/).
   Si está interesado en utilizar vLLM como proveedor, debe considerar sus recursos de hardware y seguir las [instrucciones](https://docs.vllm.ai/en/latest/getting_started/installation.html) de instalación.
 
 - [OpenRouter ](https://openrouter.ai/)
-  OpenRouter es una plataforma de código abierto diseñada para la creación y gestión de APIs para modelos de lenguaje, específicamente orientada a
+  es una plataforma de código abierto diseñada para la creación y gestión de APIs para modelos de lenguaje, específicamente orientada a
   facilitar la integración y el uso de modelos de LLMs.
   Si está interesado en utilizar OpenRouter como proveedor, revise su [documentación](https://openrouter.ai/docs/quickstart).
 
-### Instalación y Configuración
+### Instalación
 - Clonar este repositorio.
 - Crear y utilizar un entorno virtual (Recomendado) con python 3.10. Puede utilizar [miniconda3](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions), [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) u otros.
 - Moverse hasta la raíz del repositorio clonado e instalar las librerías y paquetes necesarios con
@@ -29,6 +29,11 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 
   Siéntase libre de cambiar la información del **host** y el **port**.
   
+### Configuración de vLLM
+- Una vez que ha instalado exitosamente la librería siguiendo las [instrucciones](https://docs.vllm.ai/en/latest/getting_started/installation.html) oficiales según las características de su entorno; se debe levantar un servidor que gestione las peticiones al LLM. Por ejemplo, si desea utilizar el modelo libre [meta-llama/Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) en su entorno local, ejecute:
+
+      CUDA_VISIBLE_DEVICES=0 vllm serve meta-llama/Llama-3.1-8B-Instruct --dtype auto --device cuda --trust-remote-code --load_format bitsandbytes --gpu-memory-utilization 0.7 --max-seq-len-to-capture 9216 --max-model-len 9216 --disable-log-stats --disable-log-requests --tensor-parallel-size 1 --quantization bitsandbytes --enforce-eager
+
 ### Endpoints
 Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
 
