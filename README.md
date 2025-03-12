@@ -5,9 +5,10 @@ Este repositorio contiene todo lo necesario para lanzar una API con [FastAPI](ht
 de LLMs ([vllm](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrouter.ai/)) y clasifica artículos científicos en las categorías de investigación definidas por la UNESCO.
 
 ### Instalación
-- Clonar el repositorio.
+- Clonar este repositorio.
 - Crear y utilizar un entorno virtual (Recomendado) con python 3.10. Puede utilizar [miniconda3](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions), [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) u otros.
 - Moverse hasta la raíz del repositorio clonado e instalar las librerías y paquetes necesarios con
+  
   `pip install -r requirements.txt`.
 
 ## English
