@@ -35,7 +35,12 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       
     - Nota: El campo title (título) es obligatorio, mientras que el campo abstract (resumen) es opcional; si no se incluye, la clasificación se       realizará solo con el título del artículo.
       
-- Fourth item
+- Datos de salida:
+    - Tipo de dato: **JSON**
+    - Ejemplo de salida:
+
+          {"detailed_code":"3-35A","detailed_name":"Física","specific_code":"3-5A","specific_name":"Ciencias físicas","wide_code":"05-A","wide_name":"Ciencias naturales, matemáticas y estadísticas","other_options":["3-35A-Física"]}
+      
 
 ## English
 This repository contains everything needed to launch an API with  [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vllm](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
