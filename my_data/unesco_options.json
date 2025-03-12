@@ -1,0 +1,117 @@
+{
+  "###########\n- Código: 1-11A - Nombre: Educación\n###########\n- Código: 81-11A - Nombre: Psicopedagogía\n###########\n- Código: 2-11A - Nombre: Formación para docentes de educación preprimaria\n###########\n- Código: 3-11A - Nombre: Formación para docentes sin asignaturas de especialización\n###########\n- Código: 4-11A - Nombre: Formación para docentes con asignaturas de especialización": [
+    "1-11A",
+    "81-11A",
+    "2-11A",
+    "3-11A",
+    "4-11A"
+  ],
+  "###########\n- Código: 1-12A - Nombre: Técnicas audiovisuales y producción para medios de comunicación\n###########\n- Código: 2-12A - Nombre: Diseño\n###########\n- Código: 3-12A - Nombre: Artes\n###########\n- Código: 5-12A - Nombre: Música y artes escénicas\n###########\n- Código: 1-22A - Nombre: Religión y Teología\n###########\n- Código: 2-22A - Nombre: Historia y Arqueología\n###########\n- Código: 3-22A - Nombre: Filosofía\n###########\n- Código: 1-32A - Nombre: Idiomas\n###########\n- Código: 2-32A - Nombre: Literatura y linguística": [
+    "1-12A",
+    "2-12A",
+    "3-12A",
+    "5-12A",
+    "1-22A",
+    "2-22A",
+    "3-22A",
+    "1-32A",
+    "2-32A"
+  ],
+  "###########\n- Código: 1-13A - Nombre: Economía\n###########\n- Código: 81-13A - Nombre: Economía Matemática\n###########\n- Código: 2-13A - Nombre: Ciencias políticas\n###########\n- Código: 3-13A - Nombre: Psicología\n###########\n- Código: 4-13A - Nombre: Estudios Sociales y Culturales\n###########\n- Código: 82-13A - Nombre: Estudios de Género\n###########\n- Código: 83-13A - Nombre: Geografía y territorio\n###########\n- Código: 1-23A - Nombre: Periodismo y comunicación\n###########\n- Código: 2-23A - Nombre: Bibliotecología, documentación y archivología\n###########\n- Código: 1-33A - Nombre: Derecho": [
+    "1-13A",
+    "81-13A",
+    "2-13A",
+    "3-13A",
+    "4-13A",
+    "82-13A",
+    "83-13A",
+    "1-23A",
+    "2-23A",
+    "1-33A"
+  ],
+  "###########\n- Código: 1-14A - Nombre: Contabilidad y auditoría\n###########\n- Código: 2-14A - Nombre: Gestión financiera\n###########\n- Código: 3-14A - Nombre: Administración\n###########\n- Código: 4-14A - Nombre: Mercadotecnia y publicidad\n###########\n- Código: 5-14A - Nombre: Información general\n###########\n- Código: 6-14A - Nombre: Comercio\n###########\n- Código: 7-14A - Nombre: Competencias laborales": [
+    "1-14A",
+    "2-14A",
+    "3-14A",
+    "4-14A",
+    "5-14A",
+    "6-14A",
+    "7-14A"
+  ],
+  "###########\n- Código: 1-15A - Nombre: Biología\n###########\n- Código: 81-15A - Nombre: Biofísica\n###########\n- Código: 82-15A - Nombre: Biofarmacéutica\n###########\n- Código: 83-15A - Nombre: Biomedicina\n###########\n- Código: 2-15A - Nombre: Bioquímica\n###########\n- Código: 84-15A - Nombre: Genética\n###########\n- Código: 85-15A - Nombre: Biodiversidad\n###########\n- Código: 86-15A - Nombre: Neurociencias\n###########\n- Código: 1-25A - Nombre:  Medio ambiente\n###########\n- Código: 2-25A - Nombre: Recursos Naturales Renovables\n###########\n- Código: 1-35A - Nombre: Química\n###########\n- Código: 2-35A - Nombre: Ciencias de la Tierra\n###########\n- Código: 3-35A - Nombre: Física\n###########\n- Código: 1-45A - Nombre: Matemáticas\n###########\n- Código: 2-45A - Nombre: Estadísticas\n###########\n- Código: 81-45A - Nombre: Lógica y transporte": [
+    "1-15A",
+    "81-15A",
+    "82-15A",
+    "83-15A",
+    "2-15A",
+    "84-15A",
+    "85-15A",
+    "86-15A",
+    "1-25A",
+    "2-25A",
+    "1-35A",
+    "2-35A",
+    "3-35A",
+    "1-45A",
+    "2-45A",
+    "81-45A"
+  ],
+  "###########\n- Código: 1-16A - Nombre: Computación\n###########\n- Código: 2-16A - Nombre: Diseño y administración de redes y bases de datos\n###########\n- Código: 3-16A - Nombre: Desarrollo y análisis de software y aplicaciones\n###########\n- Código: 81-16A - Nombre: Sistemas de Información": [
+    "1-16A",
+    "2-16A",
+    "3-16A",
+    "81-16A"
+  ],
+  "###########\n- Código: 1-17A - Nombre: Química aplicada\n###########\n- Código: 2-17A - Nombre: Tecnología de protección del medio ambiente\n###########\n- Código: 3-17A - Nombre: Electricidad y energía\n###########\n- Código: 4-17A - Nombre: Electrónica, automatización y sonido\n###########\n- Código: 5-17A - Nombre: Mecánica y profesiones afines a la metalistería\n###########\n- Código: 6-17A - Nombre: Diseño y construcción de vehículos, barcos y aeronaves motorizadas\n###########\n- Código: 81-17A - Nombre: Tecnologías Nucleares y Energéticas\n###########\n- Código: 82-17A - Nombre: Mecatrónica\n###########\n- Código: 83-17A - Nombre: Hidráulica\n###########\n- Código: 84-17A - Nombre: Telecomunicaciones\n###########\n- Código: 85-17A - Nombre: Nanotecnología\n###########\n- Código: 1-27A - Nombre: Procesamiento de alimentos\n###########\n- Código: 2-27A - Nombre: Materiales\n###########\n- Código: 3-27A - Nombre: Productos textiles\n###########\n- Código: 4-27A - Nombre: Minería y extracción\n###########\n- Código: 5-27A - Nombre: Producción industrial\n###########\n- Código: 6-27A - Nombre: Seguridad industrial\n###########\n- Código: 7-27A - Nombre: Diseño industrial y de procesos\n###########\n- Código: 82-7A - Nombre: Mantenimiento industrial\n###########\n- Código: 1-37A - Nombre: Arquitectura, urbanismo y restauración\n###########\n- Código: 2-37A - Nombre: Construcción e ingeniería civil": [
+    "1-17A",
+    "2-17A",
+    "3-17A",
+    "4-17A",
+    "5-17A",
+    "6-17A",
+    "81-17A",
+    "82-17A",
+    "83-17A",
+    "84-17A",
+    "85-17A",
+    "1-27A",
+    "2-27A",
+    "3-27A",
+    "4-27A",
+    "5-27A",
+    "6-27A",
+    "7-27A",
+    "82-7A",
+    "1-37A",
+    "2-37A"
+  ],
+  "###########\n- Código: 1-18A - Nombre: Producción agrícola y ganadera\n###########\n- Código: 1-28A - Nombre: Silvicultura\n###########\n- Código: 1-38A - Nombre: Pesca\n###########\n- Código: 1-48A - Nombre: Veterinaria": [
+    "1-18A",
+    "1-28A",
+    "1-38A",
+    "1-48A"
+  ],
+  "###########\n- Código: 1-19A - Nombre: Odontología\n###########\n- Código: 2-19A - Nombre: Medicina\n###########\n- Código: 3-19A - Nombre: Enfermería y obstetricia\n###########\n- Código: 4-19A - Nombre: Tecnología de diagnóstico y tratamiento médico\n###########\n- Código: 5-19A - Nombre: Terapia y rehabilitación\n###########\n- Código: 6-19A - Nombre: Farmacia\n###########\n- Código: 7-19A - Nombre: Terapias alternativas y complementarias\n###########\n- Código: 8-19A - Nombre: Salud Pública\n###########\n- Código: 1-29A - Nombre: Asistencia a adultos mayores y discapacitados\n###########\n- Código: 2-29A - Nombre: Asistencia a la infancia y servicios para jóvenes": [
+    "1-19A",
+    "2-19A",
+    "3-19A",
+    "4-19A",
+    "5-19A",
+    "6-19A",
+    "7-19A",
+    "8-19A",
+    "1-29A",
+    "2-29A"
+  ],
+  "###########\n- Código: 2-110A - Nombre: Peluquería y tratamiento de belleza\n###########\n- Código: 3-110A - Nombre: Hotelería y gastronomía\n###########\n- Código: 4-110A - Nombre: Actividad física\n###########\n- Código: 5-110A - Nombre: Turismo\n###########\n- Código: 1-210A - Nombre: Prevención y gestión de riesgos\n###########\n- Código: 2-210A - Nombre: Salud y seguridad ocupacional\n###########\n- Código: 1-310A - Nombre:  Educación policial, militar y defensa\n###########\n- Código: 2-310A - Nombre: Seguridad ciudadana\n###########\n- Código: 1-410A - Nombre: Gestión del transporte": [
+    "2-110A",
+    "3-110A",
+    "4-110A",
+    "5-110A",
+    "1-210A",
+    "2-210A",
+    "1-310A",
+    "2-310A",
+    "1-410A"
+  ]
+}

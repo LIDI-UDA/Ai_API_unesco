@@ -1,0 +1,952 @@
+[
+    {
+        "ID": 0,
+        "COD_CAMPO_AMPLIO": "01-A",
+        "NOM_CAMPO_AMPLIO": "Educación",
+        "COD_CAMPO_ESPECÍFICO": "1-1A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación",
+        "COD_CAMPO_DETALLADO": "1-11A",
+        "NOM_CAMPO_DETALLADO": "Educación",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El proceso de adquisición de conocimientos, habilidades y valores que permite el desarrollo integral de las personas y la sociedad."
+    },
+    {
+        "ID": 1,
+        "COD_CAMPO_AMPLIO": "01-A",
+        "NOM_CAMPO_AMPLIO": "Educación",
+        "COD_CAMPO_ESPECÍFICO": "1-1A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación",
+        "COD_CAMPO_DETALLADO": "81-11A",
+        "NOM_CAMPO_DETALLADO": "Psicopedagogía",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Es el campo de estudio que se enfoca en la relación entre la psicología y la educación, investigando cómo se afecta el aprendizaje y el desarrollo de los estudiantes mediante la aplicación de teorías y técnicas psicológicas en el proceso de enseñanza."
+    },
+    {
+        "ID": 2,
+        "COD_CAMPO_AMPLIO": "01-A",
+        "NOM_CAMPO_AMPLIO": "Educación",
+        "COD_CAMPO_ESPECÍFICO": "1-1A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación",
+        "COD_CAMPO_DETALLADO": "2-11A",
+        "NOM_CAMPO_DETALLADO": "Formación para docentes de educación preprimaria",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La capacitación y el desarrollo profesional de los maestros que enseñan en las etapas iniciales de la educación para preparar a los niños de edad preescolar y primer ciclo de la educación básica para aprender y crecer de manera óptima."
+    },
+    {
+        "ID": 3,
+        "COD_CAMPO_AMPLIO": "01-A",
+        "NOM_CAMPO_AMPLIO": "Educación",
+        "COD_CAMPO_ESPECÍFICO": "1-1A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación",
+        "COD_CAMPO_DETALLADO": "3-11A",
+        "NOM_CAMPO_DETALLADO": "Formación para docentes sin asignaturas de especialización",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Investigación sobre la preparación y desarrollo de docentes que enseñan sin un enfoque específico, enfocándose en mejorar sus habilidades pedagógicas y didácticas en entornos educativos diversos."
+    },
+    {
+        "ID": 4,
+        "COD_CAMPO_AMPLIO": "01-A",
+        "NOM_CAMPO_AMPLIO": "Educación",
+        "COD_CAMPO_ESPECÍFICO": "1-1A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación",
+        "COD_CAMPO_DETALLADO": "4-11A",
+        "NOM_CAMPO_DETALLADO": "Formación para docentes con asignaturas de especialización",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El desarrollo de habilidades y conocimientos específicos en docentes para mejorar la calidad de la enseñanza en áreas de especialización."
+    },
+    {
+        "ID": 5,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "-",
+        "NOM_CAMPO_ESPECÍFICO": "Artes",
+        "COD_CAMPO_DETALLADO": "1-12A",
+        "NOM_CAMPO_DETALLADO": "Técnicas audiovisuales y producción para medios de comunicación",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación creativa de herramientas y técnicas audiovisuales para producir contenidos de alta calidad destinados a la transmisión de información, entretenimiento y educación a través de los medios de comunicación."
+    },
+    {
+        "ID": 6,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "-",
+        "NOM_CAMPO_ESPECÍFICO": "Artes",
+        "COD_CAMPO_DETALLADO": "2-12A",
+        "NOM_CAMPO_DETALLADO": "Diseño",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación creativa de principios estéticos y tecnológicos para crear objetos, sistemas y experiencias que satisfagan las necesidades y deseos humanos"
+    },
+    {
+        "ID": 7,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "-",
+        "NOM_CAMPO_ESPECÍFICO": "Artes",
+        "COD_CAMPO_DETALLADO": "3-12A",
+        "NOM_CAMPO_DETALLADO": "Artes",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la creación y expresión de la belleza, la imaginación y la emoción a través de la pintura, la escultura, la música, la literatura, el teatro, el cine y otras formas de expresión artística."
+    },
+    {
+        "ID": 8,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "-",
+        "NOM_CAMPO_ESPECÍFICO": "Artes",
+        "COD_CAMPO_DETALLADO": "5-12A",
+        "NOM_CAMPO_DETALLADO": "Música y artes escénicas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la creación y la interpretación de la música y las artes escénicas, como la danza, el teatro y la ópera, desde una perspectiva estética, histórica y crítica, en relación con la expresión humana y la cultura."
+    },
+    {
+        "ID": 9,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "2-2A",
+        "NOM_CAMPO_ESPECÍFICO": "Humanidades",
+        "COD_CAMPO_DETALLADO": "1-22A",
+        "NOM_CAMPO_DETALLADO": "Religión y Teología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio y análisis de las creencias, prácticas y textos sagrados de diversas religiones, y la exploración de las implicaciones filosóficas y éticas de sus enseñanzas."
+    },
+    {
+        "ID": 10,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "2-2A",
+        "NOM_CAMPO_ESPECÍFICO": "Humanidades",
+        "COD_CAMPO_DETALLADO": "2-22A",
+        "NOM_CAMPO_DETALLADO": "Historia y Arqueología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la cultura humana a través del análisis de restos materiales y fuentes escritas, con el objetivo de comprender la evolución del pasado y sus influencias en el presente."
+    },
+    {
+        "ID": 11,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "2-2A",
+        "NOM_CAMPO_ESPECÍFICO": "Humanidades",
+        "COD_CAMPO_DETALLADO": "3-22A",
+        "NOM_CAMPO_DETALLADO": "Filosofía",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio sistemático y crítico de principios fundamentales, valores y conceptos que regulan la existencia y comprensión del ser humano, abarcando cuestiones éticas, metafísicas, lógicas y epistemológicas."
+    },
+    {
+        "ID": 12,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "3-2A",
+        "NOM_CAMPO_ESPECÍFICO": "Idiomas",
+        "COD_CAMPO_DETALLADO": "1-32A",
+        "NOM_CAMPO_DETALLADO": "Idiomas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de las lenguas naturales y sus sistemas lingüísticos, desde aspectos gramaticales, fonéticos, léxicos hasta su uso en contextos sociales y culturales."
+    },
+    {
+        "ID": 13,
+        "COD_CAMPO_AMPLIO": "02-A",
+        "NOM_CAMPO_AMPLIO": "Artes y humanidades",
+        "COD_CAMPO_ESPECÍFICO": "3-2A",
+        "NOM_CAMPO_ESPECÍFICO": "Idiomas",
+        "COD_CAMPO_DETALLADO": "2-32A",
+        "NOM_CAMPO_DETALLADO": "Literatura y linguística",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La investigación en literatura y linguística analiza la estructura, el funcionamiento y la evolución del lenguaje en relación con la creación literaria, abarcando aspectos como la gramática, la semántica, la pragmática y la historia del lenguaje."
+    },
+    {
+        "ID": 14,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "1-13A",
+        "NOM_CAMPO_DETALLADO": "Economía",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Análisis de la producción, distribución y consumo de recursos económicos dentro de las sociedades, considerando factores sociales y comportamentales que influyen en la toma de decisiones económicas."
+    },
+    {
+        "ID": 15,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "81-13A",
+        "NOM_CAMPO_DETALLADO": "Economía Matemática",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Aplicación de métodos matemáticos y estadísticos para analizar y resolver problemas económicos, como la optimización de recursos y la toma de decisiones en el ámbito de las ciencias sociales."
+    },
+    {
+        "ID": 16,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "2-13A",
+        "NOM_CAMPO_DETALLADO": "Ciencias políticas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la política y el poder en las sociedades, abarcando temas como la estructura de gobierno, las instituciones, los procesos decisionales y la influencia de factores sociales y económicos en la toma de decisiones políticas."
+    },
+    {
+        "ID": 17,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "3-13A",
+        "NOM_CAMPO_DETALLADO": "Psicología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio sistemático del comportamiento y la mente humana, enfocándose en la comprensión de las causas y mecanismos subyacentes que influyen en la conducta humana."
+    },
+    {
+        "ID": 18,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "4-13A",
+        "NOM_CAMPO_DETALLADO": "Estudios Sociales y Culturales",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la dinámica social y cultural de las sociedades, incluyendo la motivación, el comportamiento y la interacción de los individuos y grupos sociales en diferentes contextos y culturas."
+    },
+    {
+        "ID": 19,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "82-13A",
+        "NOM_CAMPO_DETALLADO": "Estudios de Género",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El análisis y estudio de las desigualdades y diferencias sociales relacionadas con el género, génesis y evolución de los roles de género, por medio de perspectivas feministas, interseccional y de género, para comprender y abordar la discriminación y la desigualdad de género en diferentes contextos sociales y culturales."
+    },
+    {
+        "ID": 20,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "1-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias sociales y del comportamiento",
+        "COD_CAMPO_DETALLADO": "83-13A",
+        "NOM_CAMPO_DETALLADO": "Geografía y territorio",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la configuración y dinámica de los espacios geográficos, incluyendo la relación entre el territorio y las sociedades humanas, considerando factores como la distribución de recursos, la movilidad humana, la dinámica de las fronteras y la influencia de la cultura en la percepción del espacio."
+    },
+    {
+        "ID": 21,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "2-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Periodismo e información",
+        "COD_CAMPO_DETALLADO": "1-23A",
+        "NOM_CAMPO_DETALLADO": "Periodismo y comunicación",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de las formas en que se crea, se produce y se consume información a través de los medios de comunicación, con un enfoque en la privacidad, la libertad de expresión y el derecho a la información."
+    },
+    {
+        "ID": 22,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "2-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Periodismo e información",
+        "COD_CAMPO_DETALLADO": "2-23A",
+        "NOM_CAMPO_DETALLADO": "Bibliotecología, documentación y archivología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Estudio de la gestión, conservación y acceso a la información en formatos físicos y digitales, enfocándose en la creación, organización y preservación de colecciones documentales,"
+    },
+    {
+        "ID": 23,
+        "COD_CAMPO_AMPLIO": "03-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias sociales, periodismo, información y derecho",
+        "COD_CAMPO_ESPECÍFICO": "3-3A",
+        "NOM_CAMPO_ESPECÍFICO": "Derecho",
+        "COD_CAMPO_DETALLADO": "1-33A",
+        "NOM_CAMPO_DETALLADO": "Derecho",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de las leyes, normas y reglamentos que rigen la conducta humana y la relación entre individuos, grupos y sociedades, dentro del contexto de las Ciencias sociales."
+    },
+    {
+        "ID": 24,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "1-14A",
+        "NOM_CAMPO_DETALLADO": "Contabilidad y auditoría",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio y aplicación de las técnicas y principios contables para registrar, analizar y reportar la información financiera de las organizaciones, así como la evaluación y verificación de la misma a través de la auditoría, con el objetivo de garantizar la integridad y confiabilidad de la información financiera y apoyar toma de decisiones en el ámbito comercial y administrativo."
+    },
+    {
+        "ID": 25,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "2-14A",
+        "NOM_CAMPO_DETALLADO": "Gestión financiera",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La planificación, organización y supervisión de los recursos financieros de una organización con el fin de alcanzar sus objetivos y maximizar su valor."
+    },
+    {
+        "ID": 26,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "3-14A",
+        "NOM_CAMPO_DETALLADO": "Administración",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El diseño, implementación y gestión de programas educativos en materias comerciales y administrativas para desarrollar habilidades y conocimientos en estudiantes de negocios y administración."
+    },
+    {
+        "ID": 27,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "4-14A",
+        "NOM_CAMPO_DETALLADO": "Mercadotecnia y publicidad",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Análisis y planificación de estrategias de marketing y publicidad para aumentar la visibilidad y la atractividad de los productos o servicios en el mercado, con el objetivo de satisfacer las necesidades de los clientes y maximizar la rentabilidad de las organizaciones."
+    },
+    {
+        "ID": 28,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "5-14A",
+        "NOM_CAMPO_DETALLADO": "Información general",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La gestión y el análisis de la información en el contexto de la educación comercial y administración, con el objetivo de apoyar la toma de decisiones informadas en organizaciones."
+    },
+    {
+        "ID": 29,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "6-14A",
+        "NOM_CAMPO_DETALLADO": "Comercio",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de las actividades económicas y empresariales relacionadas con la producción, distribución y consumo de bienes y servicios, que se ubica dentro del campo de la administración y específicamente en la rama de la educación comercial y administración."
+    },
+    {
+        "ID": 30,
+        "COD_CAMPO_AMPLIO": "04-A",
+        "NOM_CAMPO_AMPLIO": "Administración",
+        "COD_CAMPO_ESPECÍFICO": "1-4A",
+        "NOM_CAMPO_ESPECÍFICO": "Educación comercial y administración",
+        "COD_CAMPO_DETALLADO": "7-14A",
+        "NOM_CAMPO_DETALLADO": "Competencias laborales",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Las habilidades y conocimientos que un profesional debe poseer para desempeñar eficazmente su función en una organización, relacionadas con el Campo amplio de investigación 'Administración' y más específicamente con 'Educación comercial y administración'."
+    },
+    {
+        "ID": 31,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "1-15A",
+        "NOM_CAMPO_DETALLADO": "Biología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de los seres vivos y sus procesos, abarcando desde la estructura y función de los organismos hasta la evolución y diversidad de la vida en la Tierra."
+    },
+    {
+        "ID": 32,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "81-15A",
+        "NOM_CAMPO_DETALLADO": "Biofísica",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Aplicación de principios y métodos de la física para comprender y analizar fenómenos biológicos en el nivel molecular, celular y tisular, utilizando la integración de conceptos de la física, la biología y las matemáticas."
+    },
+    {
+        "ID": 33,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "82-15A",
+        "NOM_CAMPO_DETALLADO": "Biofarmacéutica",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de principios científicos y tecnológicos para el diseño, producción y control de medicamentos y productos farmacéuticos, con enfoque en la comprensión de los mecanismos biológicos y la utilización de métodos biológicos y bioquímicos para desarrollar y mejorar fármacos y otros productos farmacéuticos."
+    },
+    {
+        "ID": 34,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "83-15A",
+        "NOM_CAMPO_DETALLADO": "Biomedicina",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la relación entre las ciencias biológicas y la medicina para desarrollar nuevos tratamientos y tecnologías médicas, basados en la comprensión del funcionamiento del cuerpo humano y la identificación de enfermedades y trastornos."
+    },
+    {
+        "ID": 35,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "2-15A",
+        "NOM_CAMPO_DETALLADO": "Bioquímica",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de principios y técnicas de la química para comprender y analizar los procesos biológicos y las moléculas involucradas en la vida celular."
+    },
+    {
+        "ID": 36,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "84-15A",
+        "NOM_CAMPO_DETALLADO": "Genética",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La genética es el estudio de la herencia y la variabilidad de las características biológicas en los organismos vivos, utilizando principios y técnicas de la biología y la estadística para comprender la estructura y función de los genes y su impacto en la evolución y el desarrollo de los seres vivos."
+    },
+    {
+        "ID": 37,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "85-15A",
+        "NOM_CAMPO_DETALLADO": "Biodiversidad",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La variedad y complejidad de la vida en la Tierra, incluyendo la diversidad de especies, ecosistemas y procesos biológicos."
+    },
+    {
+        "ID": 38,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "1-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias biológicas y afines",
+        "COD_CAMPO_DETALLADO": "86-15A",
+        "NOM_CAMPO_DETALLADO": "Neurociencias",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Estudio de la estructura y función del sistema nervioso, incluyendo el cerebro, el sistema nervioso central y periférico, y sus relaciones con el comportamiento y la cognición, bajo el enfoque científico de las ciencias biológicas y matemáticas estadísticas."
+    },
+    {
+        "ID": 39,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "2-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Medio ambiente",
+        "COD_CAMPO_DETALLADO": "1-25A",
+        "NOM_CAMPO_DETALLADO": " Medio ambiente",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la interacción entre el entorno natural y los ecosistemas, incluyendo la evaluación de los impactos humanos en el medio ambiente y la búsqueda de soluciones sostenibles para proteger la biodiversidad y los recursos naturales."
+    },
+    {
+        "ID": 40,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "2-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Medio ambiente",
+        "COD_CAMPO_DETALLADO": "2-25A",
+        "NOM_CAMPO_DETALLADO": "Recursos Naturales Renovables",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Estudio y análisis de los recursos naturales que pueden ser renovados en un plazo razonable, como la energía solar, eólica y hidroeléctrica, con el objetivo de entender su disponibilidad, sostenibilidad y potencial para satisfacer las necesidades humanas."
+    },
+    {
+        "ID": 41,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "3-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias físicas",
+        "COD_CAMPO_DETALLADO": "1-35A",
+        "NOM_CAMPO_DETALLADO": "Química",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la estructura, propiedades y transformaciones de la materia, en el contexto de las ciencias físicas y naturales."
+    },
+    {
+        "ID": 42,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "3-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias físicas",
+        "COD_CAMPO_DETALLADO": "2-35A",
+        "NOM_CAMPO_DETALLADO": "Ciencias de la Tierra",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio interdisciplinario de la composición, estructura, evolución y procesos que afectan la Tierra, incluyendo la geología, la geofísica, la meteorología y la oceanografía, desde una perspectiva física y natural."
+    },
+    {
+        "ID": 43,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "3-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Ciencias físicas",
+        "COD_CAMPO_DETALLADO": "3-35A",
+        "NOM_CAMPO_DETALLADO": "Física",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la estructura, comportamiento y propiedades de la materia y la energía en el universo, utilizando principios matemáticos y estadísticos para describir y predecir fenómenos naturales."
+    },
+    {
+        "ID": 44,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "4-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Matemáticas y estadística",
+        "COD_CAMPO_DETALLADO": "1-45A",
+        "NOM_CAMPO_DETALLADO": "Matemáticas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El campo que estudia las estructuras numéricas, geométricas y algebraicas para describir y analizar fenómenos naturales y sociales, y desarrollar modelos matemáticos para predecir y comprender el mundo que nos rodea."
+    },
+    {
+        "ID": 45,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "4-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Matemáticas y estadística",
+        "COD_CAMPO_DETALLADO": "2-45A",
+        "NOM_CAMPO_DETALLADO": "Estadísticas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la recopilación, análisis y presentación de datos para comprender tendencias, patrones y relaciones en fenómenos naturales y sociales mediante el uso de métodos matemáticos y teóricos."
+    },
+    {
+        "ID": 46,
+        "COD_CAMPO_AMPLIO": "05-A",
+        "NOM_CAMPO_AMPLIO": "Ciencias naturales, matemáticas y estadísticas",
+        "COD_CAMPO_ESPECÍFICO": "4-5A",
+        "NOM_CAMPO_ESPECÍFICO": "Matemáticas y estadística",
+        "COD_CAMPO_DETALLADO": "81-45A",
+        "NOM_CAMPO_DETALLADO": "Lógica y transporte",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de la lógica matemática para modelar y resolver problemas relacionados con el transporte, como optimización de rutas, programación de horarios y planificación de tráfico."
+    },
+    {
+        "ID": 47,
+        "COD_CAMPO_AMPLIO": "06-A",
+        "NOM_CAMPO_AMPLIO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_ESPECÍFICO": "1-6A",
+        "NOM_CAMPO_ESPECÍFICO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_DETALLADO": "1-16A",
+        "NOM_CAMPO_DETALLADO": "Computación",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La computación se refiere a la ciencia y el estudio de la creación, el procesamiento, el almacenamiento y la transmisión de la información mediante dispositivos electrónicos y computadoras, siendo una rama fundamental de las Tecnologías de la Información y la Comunicación (TIC)"
+    },
+    {
+        "ID": 48,
+        "COD_CAMPO_AMPLIO": "06-A",
+        "NOM_CAMPO_AMPLIO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_ESPECÍFICO": "1-6A",
+        "NOM_CAMPO_ESPECÍFICO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_DETALLADO": "2-16A",
+        "NOM_CAMPO_DETALLADO": "Diseño y administración de redes y bases de datos",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseña, implementa y gestiona estructuras de datos y sistemas de redes para almacenar, gestionar y compartir información de manera eficiente y segura en entornos de Tecnologías de la Información y la Comunicación."
+    },
+    {
+        "ID": 49,
+        "COD_CAMPO_AMPLIO": "06-A",
+        "NOM_CAMPO_AMPLIO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_ESPECÍFICO": "1-6A",
+        "NOM_CAMPO_ESPECÍFICO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_DETALLADO": "3-16A",
+        "NOM_CAMPO_DETALLADO": "Desarrollo y análisis de software y aplicaciones",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El desarrollo y análisis de software y aplicaciones implica la creación, diseño, implementación y evaluación de soluciones informáticas para satisfacer las necesidades de usuarios y organizaciones, mediante la integración de tecnologías de la información y la comunicación (TIC)."
+    },
+    {
+        "ID": 50,
+        "COD_CAMPO_AMPLIO": "06-A",
+        "NOM_CAMPO_AMPLIO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_ESPECÍFICO": "1-6A",
+        "NOM_CAMPO_ESPECÍFICO": "Tecnologías de la información y la comunicación (TIC)",
+        "COD_CAMPO_DETALLADO": "81-16A",
+        "NOM_CAMPO_DETALLADO": "Sistemas de Información",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Los sistemas de información son estructuras organizadas que integran hardware, software y redes para procesar, almacenar y transmitir datos en formato digital, apoyando el desarrollo de aplicaciones y servicios en el ámbito de la tecnología de la información y la comunicación."
+    },
+    {
+        "ID": 51,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "1-17A",
+        "NOM_CAMPO_DETALLADO": "Química aplicada",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Desarrollo de nuevos materiales y procesos químicos para aplicaciones industriales y de ingeniería"
+    },
+    {
+        "ID": 52,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "2-17A",
+        "NOM_CAMPO_DETALLADO": "Tecnología de protección del medio ambiente",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Desarrollo e implementación de soluciones tecnológicas para reducir el impacto ambiental en la industria y la construcción, mediante la optimización de procesos, la reducción de emisiones y la promoción de prácticas sostenibles."
+    },
+    {
+        "ID": 53,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "3-17A",
+        "NOM_CAMPO_DETALLADO": "Electricidad y energía",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio de la generación, transmisión, distribución y consumo de la energía eléctrica en sistemas y dispositivos de ingeniería, con énfasis en la optimización de la eficiencia y la seguridad en aplicaciones industriales y constructivas."
+    },
+    {
+        "ID": 54,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "4-17A",
+        "NOM_CAMPO_DETALLADO": "Electrónica, automatización y sonido",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El desarrollo de sistemas electrónicos y de automatización en la construcción e industria, enfocándose en la integración de tecnologías de sonido para mejorar la eficiencia y la calidad en estos sectores."
+    },
+    {
+        "ID": 55,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "5-17A",
+        "NOM_CAMPO_DETALLADO": "Mecánica y profesiones afines a la metalistería",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño, análisis, construcción y mantenimiento de maquinaria, sistemas y estructuras metálicas, con énfasis en la aplicación de principios de la mecánica para mejorar la eficiencia, seguridad y sostenibilidad en la industria y la construcción."
+    },
+    {
+        "ID": 56,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "6-17A",
+        "NOM_CAMPO_DETALLADO": "Diseño y construcción de vehículos, barcos y aeronaves motorizadas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Este campo de investigación aborda la creación de sistemas complejos que involucran la integración de tecnología, materiales y ergonomía para desarrollar vehículos, barcos y aeronaves eficientes, seguras y sostenibles, con enfoque en la optimización de sus sistemas de propulsión, manejo y seguridad."
+    },
+    {
+        "ID": 57,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "81-17A",
+        "NOM_CAMPO_DETALLADO": "Tecnologías Nucleares y Energéticas",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño, construcción, operación y mantenimiento de sistemas de generación de energía nuclear y no nuclear, enfocados en el desarrollo sostenible y la seguridad energética."
+    },
+    {
+        "ID": 58,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "82-17A",
+        "NOM_CAMPO_DETALLADO": "Mecatrónica",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de la tecnología electrónica en sistemas mecánicos para lograr una integración eficiente de componentes mecánicos y electrónicos en dispositivos y sistemas."
+    },
+    {
+        "ID": 59,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "83-17A",
+        "NOM_CAMPO_DETALLADO": "Hidráulica",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La Hidráulica es el estudio de la interacción entre la energía y los fluidos en movimiento, aplicada en la ingeniería y profesiones afines para solucionar problemas relacionados con el transporte y uso eficiente de agua y otros fluidos en sistemas hidráulicos."
+    },
+    {
+        "ID": 60,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "84-17A",
+        "NOM_CAMPO_DETALLADO": "Telecomunicaciones",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño, implementación y gestión de sistemas de comunicación, incluyendo redes de comunicación, transmisión de señales y dispositivos de comunicación, con el objetivo de conectar y facilitar la comunicación entre personas y dispositivos."
+    },
+    {
+        "ID": 61,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "1-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Ingeniería y profesiones afines",
+        "COD_CAMPO_DETALLADO": "85-17A",
+        "NOM_CAMPO_DETALLADO": "Nanotecnología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Aplicación de la ingeniería a la manipulación y creación de materiales y estructuras a nivel nanométrico, con el objetivo de mejorar las propiedades y rendimientos de productos e infraestructuras en diversas industrias."
+    },
+    {
+        "ID": 62,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "1-27A",
+        "NOM_CAMPO_DETALLADO": "Procesamiento de alimentos",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El Procesamiento de alimentos es la aplicación de la Ingeniería y la tecnología para transformar y mejorar la calidad de los alimentos, buscando conservar su valor nutricional y organoléptico, a través de métodos como la pasteurización, secado, congelación, envasado y embalaje."
+    },
+    {
+        "ID": 63,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "2-27A",
+        "NOM_CAMPO_DETALLADO": "Materiales",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Desarrollo y caracterización de materiales para aplicaciones industriales y de producción, considerando factores como la resistencia, durabilidad, compatibilidad y costo."
+    },
+    {
+        "ID": 64,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "3-27A",
+        "NOM_CAMPO_DETALLADO": "Productos textiles",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño, producción y mejora de materiales y objetos textiles con propiedades y características específicas, aplicados en la industria de la moda, confección y artesanía."
+    },
+    {
+        "ID": 65,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "4-27A",
+        "NOM_CAMPO_DETALLADO": "Minería y extracción",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de métodos y tecnologías para extraer recursos minerales y materias primas de la tierra, considerando aspectos de ingeniería, seguridad y producción en la industria minera."
+    },
+    {
+        "ID": 66,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "5-27A",
+        "NOM_CAMPO_DETALLADO": "Producción industrial",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El proceso de creación de bienes y servicios a gran escala utilizando tecnologías y recursos mecánicos y tecnológicos para satisfacer las necesidades de la sociedad."
+    },
+    {
+        "ID": 67,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "6-27A",
+        "NOM_CAMPO_DETALLADO": "Seguridad industrial",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El análisis y diseño de sistemas y procesos para prevenir accidentes y lesiones en entornos industriales, garantizando la protección de la vida humana y el medio ambiente."
+    },
+    {
+        "ID": 68,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "7-27A",
+        "NOM_CAMPO_DETALLADO": "Diseño industrial y de procesos",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La creación de soluciones innovadoras para la optimización y mejora de la producción y el funcionamiento de las plantas industriales, integrando aspectos de ergonomía, seguridad y eficiencia en el diseño de productos y procesos."
+    },
+    {
+        "ID": 69,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "2-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Industria y producción",
+        "COD_CAMPO_DETALLADO": "82-7A",
+        "NOM_CAMPO_DETALLADO": "Mantenimiento industrial",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El mantenimiento industrial se refiere a la aplicación de técnicas y estrategias para mantener y mejorar la disponibilidad, confiabilidad y eficiencia de las instalaciones y equipos industriales, reduciendo costos y aumentando la productividad."
+    },
+    {
+        "ID": 70,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "3-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Arquitectura y construcción",
+        "COD_CAMPO_DETALLADO": "1-37A",
+        "NOM_CAMPO_DETALLADO": "Arquitectura, urbanismo y restauración",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño y planificación de espacios físicos, incluyendo edificios, ciudades y monumentos históricos, con enfoque en la eficiencia, estética y sostenibilidad, relacionado con la creación de estructuras y espacios físicos para la humanidad."
+    },
+    {
+        "ID": 71,
+        "COD_CAMPO_AMPLIO": "07-A",
+        "NOM_CAMPO_AMPLIO": "Ingeniería, industria y construcción",
+        "COD_CAMPO_ESPECÍFICO": "3-7A",
+        "NOM_CAMPO_ESPECÍFICO": "Arquitectura y construcción",
+        "COD_CAMPO_DETALLADO": "2-37A",
+        "NOM_CAMPO_DETALLADO": "Construcción e ingeniería civil",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Diseño, planificación, construcción y mantenimiento de estructuras y edificios, considerando aspectos técnicos, económicos y ambientales, con enfoque en la seguridad y sostenibilidad."
+    },
+    {
+        "ID": 72,
+        "COD_CAMPO_AMPLIO": "08-A",
+        "NOM_CAMPO_AMPLIO": "Agricultura, silvicultura, pesca y veterinaria",
+        "COD_CAMPO_ESPECÍFICO": "1-8A",
+        "NOM_CAMPO_ESPECÍFICO": " Agricultura",
+        "COD_CAMPO_DETALLADO": "1-18A",
+        "NOM_CAMPO_DETALLADO": "Producción agrícola y ganadera",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La producción agrícola se enfoca en el cultivo y manejo de plantas para obtener alimentos y otros productos, mientras que la ganadería se centra en el cuidado y cría de animales para producción de carne, leche y otros productos, ambas actividades están estrechamente relacionadas con la agricultura y la producción de alimentos."
+    },
+    {
+        "ID": 73,
+        "COD_CAMPO_AMPLIO": "08-A",
+        "NOM_CAMPO_AMPLIO": "Agricultura, silvicultura, pesca y veterinaria",
+        "COD_CAMPO_ESPECÍFICO": "2-8A",
+        "NOM_CAMPO_ESPECÍFICO": "Silvicultura",
+        "COD_CAMPO_DETALLADO": "1-28A",
+        "NOM_CAMPO_DETALLADO": "Silvicultura",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La disciplina que se dedica al cultivo, manejo y conservación de los bosques y árboles para obtener productos y servicios forestales, dentro del campo amplio de la Agricultura."
+    },
+    {
+        "ID": 74,
+        "COD_CAMPO_AMPLIO": "08-A",
+        "NOM_CAMPO_AMPLIO": "Agricultura, silvicultura, pesca y veterinaria",
+        "COD_CAMPO_ESPECÍFICO": "3-8A",
+        "NOM_CAMPO_ESPECÍFICO": "Pesca",
+        "COD_CAMPO_DETALLADO": "1-38A",
+        "NOM_CAMPO_DETALLADO": "Pesca",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La práctica de la agricultura en aguas, centrada en la captura de peces y otros organismos acuáticos para consumo humano o para otros fines, dentro del contexto de la producción alimentaria y la gestión de recursos naturales."
+    },
+    {
+        "ID": 75,
+        "COD_CAMPO_AMPLIO": "08-A",
+        "NOM_CAMPO_AMPLIO": "Agricultura, silvicultura, pesca y veterinaria",
+        "COD_CAMPO_ESPECÍFICO": "4-8A",
+        "NOM_CAMPO_ESPECÍFICO": "Veterinaria",
+        "COD_CAMPO_DETALLADO": "1-48A",
+        "NOM_CAMPO_DETALLADO": "Veterinaria",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de la ciencia y la tecnología para prevenir, diagnosticar y tratar enfermedades y lesiones en animales, asegurando su bienestar y contribuyendo a la producción sostenible de alimentos y productos animales, dentro del ecosistema que forma parte del Campo amplio de investigación: Agricultura, silvicultura, pesca y veterinaria."
+    },
+    {
+        "ID": 76,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "1-19A",
+        "NOM_CAMPO_DETALLADO": "Odontología",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio y la práctica de la salud y el tratamiento de los problemas relacionados con la boca, los dientes y las encías, con el objetivo de mantener y mejorar la salud oral y el bienestar general."
+    },
+    {
+        "ID": 77,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "2-19A",
+        "NOM_CAMPO_DETALLADO": "Medicina",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La Medicina es el estudio y la práctica de la prevención, el diagnóstico y el tratamiento de enfermedades y lesiones en seres humanos."
+    },
+    {
+        "ID": 78,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "3-19A",
+        "NOM_CAMPO_DETALLADO": "Enfermería y obstetricia",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El campo de la Enfermería y Obstetricia se enfoca en la atención y la atención prenatal, perinatal y puerperal, así como en la promoción de la salud reproductiva y la prevención de complicaciones obstétricas, abarcando tanto la atención médica como el cuidado emocional a las mujeres embarazadas y a sus bebés."
+    },
+    {
+        "ID": 79,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "4-19A",
+        "NOM_CAMPO_DETALLADO": "Tecnología de diagnóstico y tratamiento médico",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El desarrollo y mejora de tecnologías para la detección y tratamiento efectivos de enfermedades, con el objetivo de mejorar la salud y el bienestar de las personas."
+    },
+    {
+        "ID": 80,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "5-19A",
+        "NOM_CAMPO_DETALLADO": "Terapia y rehabilitación",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El proceso de restaurar y mejorar la función física, cognitiva y emocional de un individuo después de una lesión, enfermedad o discapacidad, con el objetivo de mejorar su calidad de vida y lograr una mayor autonomía y independencia."
+    },
+    {
+        "ID": 81,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "6-19A",
+        "NOM_CAMPO_DETALLADO": "Farmacia",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La aplicación de la ciencia y la tecnología para la creación y el control de sustancias activas para prevenir, diagnosticar, tratar y curar enfermedades, mejorando el bienestar y la calidad de vida de las personas"
+    },
+    {
+        "ID": 82,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "7-19A",
+        "NOM_CAMPO_DETALLADO": "Terapias alternativas y complementarias",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Enfoque de la salud que busca complementar o alternar a las terapias tradicionales médicas, mediante prácticas y tratamientos no convencionales, como la acupuntura, la meditación, la salud holística y la homeopatía, con el objetivo de mejorar la salud y el bienestar de las personas."
+    },
+    {
+        "ID": 83,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "1-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Salud",
+        "COD_CAMPO_DETALLADO": "8-19A",
+        "NOM_CAMPO_DETALLADO": "Salud Pública",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El estudio y promoción de la salud y el bienestar de las poblaciones, enfocándose en la prevención de enfermedades y la mejora de la calidad de vida a través de políticas, programas y servicios de salud"
+    },
+    {
+        "ID": 84,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "2-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Bienestar",
+        "COD_CAMPO_DETALLADO": "1-29A",
+        "NOM_CAMPO_DETALLADO": "Asistencia a adultos mayores y discapacitados",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Mejorar la calidad de vida y la autonomía de los adultos mayores y discapacitados a través de la provisión de servicios de apoyo, atención médica y asistencia en la realización de actividades diarias, enfocándose en promover su bienestar físico, emocional y social."
+    },
+    {
+        "ID": 85,
+        "COD_CAMPO_AMPLIO": "09-A",
+        "NOM_CAMPO_AMPLIO": "Salud y Bienestar",
+        "COD_CAMPO_ESPECÍFICO": "2-9A",
+        "NOM_CAMPO_ESPECÍFICO": "Bienestar",
+        "COD_CAMPO_DETALLADO": "2-29A",
+        "NOM_CAMPO_DETALLADO": "Asistencia a la infancia y servicios para jóvenes",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Desarrollo y promoción de programas y servicios que apoyen el bienestar emocional, social y físico de niños y jóvenes, abordando necesidades específicas y facilitando su transición a la edad adulta."
+    },
+    {
+        "ID": 86,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "1-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios personales",
+        "COD_CAMPO_DETALLADO": "2-110A",
+        "NOM_CAMPO_DETALLADO": "Peluquería y tratamiento de belleza",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "Preparación física y atención personalizada a las personas, enfocada en la mejora de su apariencia y bienestar, mediante servicios como peluquería, estética, manicura y otros tratamientos de belleza."
+    },
+    {
+        "ID": 87,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "1-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios personales",
+        "COD_CAMPO_DETALLADO": "3-110A",
+        "NOM_CAMPO_DETALLADO": "Hotelería y gastronomía",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El campo de investigación de la hotelería y gastronomía se enfoca en el análisis y mejora de los servicios personales relacionados con la atención al huésped en establecimientos hoteleros y la experiencia gastronómica en restaurantes y bares."
+    },
+    {
+        "ID": 88,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "1-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios personales",
+        "COD_CAMPO_DETALLADO": "4-110A",
+        "NOM_CAMPO_DETALLADO": "Actividad física",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El ejercicio físico como un servicio personalizado, que busca mejorar la salud y el bienestar de individuos a través de la planificación y ejecución de programas de actividad física personalizados."
+    },
+    {
+        "ID": 89,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "1-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios personales",
+        "COD_CAMPO_DETALLADO": "5-110A",
+        "NOM_CAMPO_DETALLADO": "Turismo",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La prestación de servicios personalizados y experiencias para los viajeros, enfocándose en el bienestar, la seguridad y la satisfacción del cliente a través de la atención personalizada y la atención a detalles."
+    },
+    {
+        "ID": 90,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "2-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios de protección",
+        "COD_CAMPO_DETALLADO": "1-210A",
+        "NOM_CAMPO_DETALLADO": "Prevención y gestión de riesgos",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La prevención y gestión de riesgos en servicios de protección se enfoca en identificar y mitigar amenazas potenciales para proteger a personas, activos y sistemas, garantizando la seguridad y confiabilidad de los servicios proporcionados."
+    },
+    {
+        "ID": 91,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "2-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios de protección",
+        "COD_CAMPO_DETALLADO": "2-210A",
+        "NOM_CAMPO_DETALLADO": "Salud y seguridad ocupacional",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La prestación de servicios para garantizar la protección de la salud y la seguridad de los trabajadores en el lugar de trabajo, mediante la implementación de políticas y procedimientos eficaces para prevenir lesiones y enfermedades laborales."
+    },
+    {
+        "ID": 92,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "3-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios de seguridad",
+        "COD_CAMPO_DETALLADO": "1-310A",
+        "NOM_CAMPO_DETALLADO": " Educación policial, militar y defensa",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "El desarrollo de habilidades y conocimientos específicos en personal de seguridad y defensa, para mejorar la eficacia en su función de protección y prevención de amenazas."
+    },
+    {
+        "ID": 93,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "3-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicios de seguridad",
+        "COD_CAMPO_DETALLADO": "2-310A",
+        "NOM_CAMPO_DETALLADO": "Seguridad ciudadana",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La prestación de servicios especializados destinados a garantizar la protección de las personas y bienes dentro de un entorno urbano, a través de la prevención y respuesta a situaciones de riesgo y amenaza, bajo principios de eficiencia, eficacia y respeto a los derechos humanos."
+    },
+    {
+        "ID": 94,
+        "COD_CAMPO_AMPLIO": "10-A",
+        "NOM_CAMPO_AMPLIO": "Servicios",
+        "COD_CAMPO_ESPECÍFICO": "4-10A",
+        "NOM_CAMPO_ESPECÍFICO": "Servicio de transporte",
+        "COD_CAMPO_DETALLADO": "1-410A",
+        "NOM_CAMPO_DETALLADO": "Gestión del transporte",
+        "DESC_CAMPO_DETALLADO_Llama-3.1-8B-Instruct": "La planificación, organización, coordinación y control de los medios y recursos necesarios para la movilidad de personas y mercancías, con el objetivo de optimizar la eficiencia, eficacia y seguridad del servicio de transporte."
+    }
+]

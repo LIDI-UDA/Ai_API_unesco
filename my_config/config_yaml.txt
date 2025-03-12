@@ -1,0 +1,27 @@
+# your llm provider
+provider: "your_provider" # valid options = ["vllm", "openrouter"]
+
+# your api keys
+api_keys:
+    openrouter: "your_api_key"
+    vllm: "EMPTY" # must be "EMPTY"
+    elsevier: "your_api_key"
+    springer: "your_api_key"
+
+# your openrouter config
+openrouter_config:
+    openrouter_base_url: "your_base_url"
+    openrouter_model_name: "your_model_name"
+
+# your vllm config
+vllm_config:
+    vllm_base_url: "your_base_url"
+    vllm_model_name: "your_model_name"
+
+# do not change the following lines
+data_paths:
+    unesco_options: "my_data/unesco_options.json"
+    unesco_search: "my_data/unesco_fast_search.json"
+
+dynamic_config:
+    dynamic_model_name: ""
