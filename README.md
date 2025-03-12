@@ -39,7 +39,14 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
     - Tipo de dato: **JSON**
     - Ejemplo de salida:
 
-          {"detailed_code":"3-35A","detailed_name":"Física","specific_code":"3-5A","specific_name":"Ciencias físicas","wide_code":"05-A","wide_name":"Ciencias naturales, matemáticas y estadísticas","other_options":["3-35A-Física"]}
+          {"detailed_code":"3-35A",
+           "detailed_name":"Física",
+           "specific_code":"3-5A",
+           "specific_name":"Ciencias físicas",
+           "wide_code":"05-A",
+           "wide_name":"Ciencias naturales, matemáticas y estadísticas",
+           "other_options":["3-35A-Física"]
+          }
       
 
 ## English
