@@ -1,6 +1,6 @@
 # Ai_API_unesco
 
-(english)[## english] | (spanish)[## spanish]
+[english](#english) | [spanish](#spanish)
 
 ## Spanish
 Este repositorio contiene todo lo necesario para lanzar una API con [FastAPI](https://fastapi.tiangolo.com/) que utiliza dos proveedores distintos
