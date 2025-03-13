@@ -143,7 +143,7 @@ This repository contains everything needed to launch an API with [FastAPI](https
 
   Feel free to change the **host** y el **port** information.
   
-### Configuración de vLLM
+### vLLM Configuration
 - Once you have successfully installed the library following the official [instructions](https://docs.vllm.ai/en/latest/getting_started/installation.html) according to your environment's specifications, you need to start a server to handle requests to the LLM. For example, if you want to use the open model [meta-llama/Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) in your local environment, run:
 
       CUDA_VISIBLE_DEVICES=0 vllm serve meta-llama/Llama-3.1-8B-Instruct --dtype auto --device cuda --trust-remote-code --load_format bitsandbytes --gpu-memory-utilization 0.7 --max-seq-len-to-capture 9216 --max-model-len 9216 --disable-log-stats --disable-log-requests --tensor-parallel-size 1 --quantization bitsandbytes --enforce-eager
@@ -152,7 +152,7 @@ This repository contains everything needed to launch an API with [FastAPI](https
   You can review and modify the vLLM server parameters in its [documentation](https://docs.vllm.ai/en/latest/serving/engine_args.html).
     - Note: If you are unsure which model to use, consider your organization's **hardware** resources. You can check an approximate VRAM usage based on the model size [here](https://docs.unsloth.ai/get-started/beginner-start-here/unsloth-requirements#approximate-vram-requirements-based-on-model-parameters).
 
-### Configuración de OpenRouter
+### OpenRouter Configuration
 - To use OpenRouter as a provider, simply [obtain](https://openrouter.ai/) the necessary credentials from its platform and set them correctly in the **config.yaml** file. OpenRouter also uses the [OpenAI](https://platform.openai.com/docs/overview) interface to query the LLM.
 
 ### Endpoints
@@ -223,8 +223,8 @@ Once the service is running, the following **Endpoints** will be available:
       import requests
 
       url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
-      doi_prueba = '10.48550/arXiv.2403.02159'
-      data = {"doi": doi_prueba}
+      test_doi = '10.48550/arXiv.2403.02159'
+      data = {"doi": test_doi}
 
       response = requests.post(url, json=data)
       print(response.text)
