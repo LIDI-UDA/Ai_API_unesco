@@ -16,6 +16,9 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
   facilitar la integración y el uso de modelos de LLMs.
   Si está interesado en utilizar OpenRouter como proveedor, revise su [documentación](https://openrouter.ai/docs/quickstart).
 
+### Requerimientos del sistema
+- Ubuntu server 22.04
+
 ### Instalación
 - Clonar este repositorio.
 - Crear y utilizar un entorno virtual (Recomendado) con python 3.10. Puede utilizar [miniconda3](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions), [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) u otros.
@@ -127,6 +130,9 @@ This repository contains everything needed to launch an API with [FastAPI](https
 - [OpenRouter ](https://openrouter.ai/)
   is an open-source platform designed for creating and managing APIs for language models, specifically aimed at facilitating the integration and use of LLMs.
   If you are interested in using OpenRouter as a provider, check out its [documentation](https://openrouter.ai/docs/quickstart).
+
+### System requirements
+- Ubuntu server 22.04
 
 ### Instalation
 - Clone this repository.
