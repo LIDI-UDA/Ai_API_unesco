@@ -27,7 +27,7 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 - Modificar el nuevo archivo "config.yaml" con la información sobre su proveedor de servicios de LLMs según las instrucciones del mismo archivo.
 - Lanzar la API con el siguiente comando:
 
-      uvicorn v2_3_main:app --reload --host 0.0.0.0 --port 8001
+      fastapi run v2_3_main.py --host 0.0.0.0 --port 8001
 
   Siéntase libre de cambiar la información del **host** y el **port**.
   
@@ -139,7 +139,7 @@ This repository contains everything needed to launch an API with [FastAPI](https
 - Edit the newly renamed "config.yaml" file with the information about your LLM service provider, following the instructions in the file.
 - Launch the API with the following command:
 
-      uvicorn v2_3_main:app --reload --host 0.0.0.0 --port 8001
+      fastapi run v2_3_main.py --host 0.0.0.0 --port 8001
 
   Feel free to change the **host** y el **port** information.
   
