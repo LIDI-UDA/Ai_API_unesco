@@ -1,5 +1,7 @@
 # Ai_API_unesco
 
+(english)[## english] | (spanish)[## spanish]
+
 ## Spanish
 Este repositorio contiene todo lo necesario para lanzar una API con [FastAPI](https://fastapi.tiangolo.com/) que utiliza dos proveedores distintos
 de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrouter.ai/)) y clasifica artículos científicos en las categorías de investigación definidas por la UNESCO.
