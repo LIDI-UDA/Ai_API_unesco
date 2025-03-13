@@ -34,6 +34,13 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 
       CUDA_VISIBLE_DEVICES=0 vllm serve meta-llama/Llama-3.1-8B-Instruct --dtype auto --device cuda --trust-remote-code --load_format bitsandbytes --gpu-memory-utilization 0.7 --max-seq-len-to-capture 9216 --max-model-len 9216 --disable-log-stats --disable-log-requests --tensor-parallel-size 1 --quantization bitsandbytes --enforce-eager
 
+  Esto levantará un servidor con la interfaz de [OpenAI](https://platform.openai.com/docs/overview) en el puerto **8000** por defecto.
+  Puede revisar y modificar los parámetros del servidor vLLM con su [documentación](https://docs.vllm.ai/en/latest/serving/engine_args.html).
+    - Nota: Si no está seguro de qué modelo utilizar, debe tomar en cuenta los recuros **hardware** de su organización, [aquí](https://docs.unsloth.ai/get-started/beginner-start-here/unsloth-requirements#approximate-vram-requirements-based-on-model-parameters) puede consultar una aproximación del uso de VRAM de acuerdo al tamaño de un LLM.
+
+### Configuración de OpenRouter
+- Para utilizar OpenRouter como proveedor, basta con [obtener](https://openrouter.ai/) las credenciales necesarias en su plataforma y definirlas correctamente en el archivo **config.yaml**. Openouter también utiliza la interfaz de [OpenAI](https://platform.openai.com/docs/overview) para realizar consultas al LLM.
+
 ### Endpoints
 Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
 
@@ -48,8 +55,7 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
             "abstract": "Resumen o abstract del artículo"
           }
       
-    - Nota: El campo title (título) es obligatorio, mientras que el campo abstract (resumen) es opcional; si no se incluye, la clasificación se       realizará solo con el título del artículo.
-      
+    - Nota: El campo title (título) es obligatorio, mientras que el campo abstract (resumen) es opcional; si no se incluye, la clasificación se realizará solo con el título del artículo.
 - Datos de salida:
     - Tipo de dato: **JSON**
     - Ejemplo de salida:
@@ -63,7 +69,18 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
            "other_options":["3-35A-Física"]
           }
       
+- Código de ejemplo con **requests** en python:
 
+      import requests
+
+      url = "http://127.0.0.1:8001/classify/"
+      data = {"title": "Análisis de la competitividad de las exportaciones de aceite vegetal ecuatoriano 2010-2020", 
+              "abstract": "[No abstract available]"
+             }
+
+      response = requests.post(url, json=data)
+      print(response.text)
+  
 ## English
 This repository contains everything needed to launch an API with  [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vllm](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
 
