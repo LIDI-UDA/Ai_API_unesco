@@ -1,4 +1,4 @@
-fastapi==0.115.8
+fastapi[standard]
 PyYAML==6.0.1
 openai==1.63.2
 json5==0.9.14
