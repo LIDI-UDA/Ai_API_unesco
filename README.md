@@ -118,15 +118,13 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       print(response.text)
   
 ## English
-This repository contains everything needed to launch an API with  [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vllm](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
+This repository contains everything needed to launch an API with [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vLLM](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
+- [vLLM](https://docs.vllm.ai/en/latest/)
+  is a production-ready open-source library designed to optimize the use of LLMs.
+  vLLM allows language models to run faster and more efficiently, while also supporting distributed architectures and open-source LLMs, e.g., [HuggingFace](https://huggingface.co/).
+  If you are interested in using vLLM as a provider, you should consider your hardware resources and follow the installation [instructions](https://docs.vllm.ai/en/latest/getting_started/installation.html).
 
-Steps to launch the API:
-
-# Título principal
-
-Aquí hay algo de contenido en la sección de ejemplo.
-
----
-
-[Ir a la sección de ejemplo](#classify)
+- [OpenRouter ](https://openrouter.ai/)
+  is an open-source platform designed for creating and managing APIs for language models, specifically aimed at facilitating the integration and use of LLMs.
+  If you are interested in using OpenRouter as a provider, check out its [documentation](https://openrouter.ai/docs/quickstart).
 
