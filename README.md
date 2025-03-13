@@ -45,7 +45,7 @@ de LLMs ([vLLM](https://docs.vllm.ai/en/latest/) y [openrouter](https://openrout
 Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
 
 #### /classify/
-- Descripción: Este endpoint se encarga de clasificar un artículo a partir de su título y resumen (abstract), utilizando un LLMS y las categorías predefinidas de la UNESCO. El título y el resumen son enviados como parámetros y el modelo devuelve información sobre la clasificación del artículo.
+- Descripción: Este endpoint se encarga de clasificar un artículo a partir de su título y resumen (abstract), utilizando un LLM y las categorías predefinidas de la UNESCO. El título y el resumen son enviados como parámetros y el modelo devuelve información sobre la clasificación del artículo.
 - Método: **POST**
 - Datos de entrada:
     - Tipo de dato: **JSON**
@@ -74,9 +74,43 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       import requests
 
       url = "http://127.0.0.1:8001/classify/"
-      data = {"title": "Análisis de la competitividad de las exportaciones de aceite vegetal ecuatoriano 2010-2020", 
+      data = {"title": "Search for Gamma-Ray Spectral Lines from Dark Matter Annihilation up to 100 TeV toward the Galactic Center with MAGIC.", 
               "abstract": "[No abstract available]"
              }
+
+      response = requests.post(url, json=data)
+      print(response.text)
+
+#### /classify_by_doi/
+- Descripción: Este endpoint se encarga de clasificar un artículo a partir de un **doi** utilizando un LLM y las categorías predefinidas de la UNESCO. El **doi** es enviado como parámetro y el modelo devuelve información sobre la clasificación del artículo.
+- Método: **POST**
+- Datos de entrada:
+    - Tipo de dato: **JSON**
+    - Estructura esperada:
+
+          { "doi": "DOI del artículo, e.g: 10.48550/arXiv.2403.02159"}
+      
+    - Nota: El campo **doi** es obligatorio.
+- Datos de salida:
+    - Tipo de dato: **JSON**
+    - Ejemplo de salida:
+
+          {"detailed_code":"3-35A",
+           "detailed_name":"Física",
+           "specific_code":"3-5A",
+           "specific_name":"Ciencias físicas",
+           "wide_code":"05-A",
+           "wide_name":"Ciencias naturales, matemáticas y estadísticas",
+           "other_options":["3-35A-Física"]
+          }
+      
+- Código de ejemplo con **requests** en python:
+
+      import requests
+
+      url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
+      doi_prueba = '10.48550/arXiv.2403.02159'
+      data = {"doi": doi_prueba}
 
       response = requests.post(url, json=data)
       print(response.text)
