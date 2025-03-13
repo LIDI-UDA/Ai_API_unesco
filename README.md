@@ -120,7 +120,7 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       response = requests.post(url, json=data)
       print(response.text)
 
-#### Más endopoinsts en construcción...
+#### Más endpoints en construcción...
   
 ## English
 This repository contains everything needed to launch an API with [FastAPI](https://fastapi.tiangolo.com/) that uses two different LLM providers ([vLLM](https://docs.vllm.ai/en/latest/) and [openrouter](https://openrouter.ai/)) and classifies scientific articles into the research categories defined by UNESCO.
@@ -237,4 +237,4 @@ Once the service is running, the following **Endpoints** will be available:
       response = requests.post(url, json=data)
       print(response.text)
 
-#### More endopoints coming soon...
+#### More endpoints coming soon...
