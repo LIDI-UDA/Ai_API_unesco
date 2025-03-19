@@ -121,35 +121,41 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       print(response.text)
 
 #### /extract_metadata_paper_by_DOI/
-- Descripción: Este endpoint se encarga de obtener toda información relevante de un artículo a partir del **DOI**. 
+- Descripción: Este endpoint se encarga de obtener toda información relevante de un artículo a partir del **DOI**, dando la opción de devolver con un **JSON** o en escribirlo en un archivo JSON. 
 - Método: **POST**
 - Datos de entrada:
-    - Tipo de dato: **String**
+    - Tipo de dato: **JSON**
     - Estructura esperada:
 
-          { "doi": "DOI del artículo, e.g: 10.48550/arXiv.2403.02159"}
+          {"doi" : DOI del artículo, e.g: '' , "write2File" : False}
       
-    - Nota: El campo **DOI** es obligatorio.
+    - Nota: El campo **DOI** es obligatorio, y el campo **write2File** dejarlo en False por defecto.
 - Datos de salida:
     - Tipo de dato: **JSON**
     - Ejemplo de salida:
 
-          {"detailed_code":"3-35A",
-           "detailed_name":"Física",
-           "specific_code":"3-5A",
-           "specific_name":"Ciencias físicas",
-           "wide_code":"05-A",
-           "wide_name":"Ciencias naturales, matemáticas y estadísticas",
-           "other_options":["3-35A-Física"]
+           {
+            "DOI":"10.3390/app15041934",
+            "Title":"Evaluating the Impact of Membership Functions and Defuzzification Methods in a Fuzzy System: Case of Air Quality Levels",
+            "Authors":"Juan Fernando Lima; Andrés Patiño-León; Marcos Orellana; Jorge Luis Zambrano-Martinez",
+            "Affiliation":"Computer Science Research & Development Laboratory (LIDI), Universidad del Azuay, Cuenca 010204, Ecuador; Computer Science Research & Development Laboratory (LIDI), Universidad del Azuay, Cuenca 010204, Ecuador. Facultad de Informática, Universidad Nacional de la Plata, La Plata 1900, Argentina; Computer Science Research & Development Laboratory (LIDI), Universidad del Azuay, Cuenca 010204, Ecuador; Computer Science Research & Development Laboratory (LIDI), Universidad del Azuay, Cuenca 010204, Ecuador",
+            "Abstract":"Since the 1960s, fuzzy logic has contributed to developing control systems based on modeling nonlinear problems using linguistic terms and inference rules. In the air quality domain, fuzzy logic has allowed us to tackle inferential environmental systems that are tolerant of human uncertainty and aimed at decision support. These systems are composed of three processes: a function to define a membership degree of the system’s value concerning a human linguistic term; an inference engine for decision making; and defuzzification methods focused on transforming the aggregated fuzzy set into a real-world value. Over the years, multiple mathematical formulas have been proposed to enrich membership functions or defuzzification methods; however, their use is                            sometimes limited to classical functions, limiting the importance of other proposals. This paper aims to evaluate the impact of the transformation functions in an air quality fuzzy system. The results of this work prove that the defuzzification method has a more significant effect than the others. It should be noted that by considering these results or their evaluation method, the quality of future fuzzy systems can be improved in both industrial and academic domains.",
+            "issn":"2076-3417",
+            "Issued":"2025-2-13",
+            "Published":"2025-2-13"
           }
       
 - Código de ejemplo con **requests** en Python:
 
       import requests
 
-      url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
-      doi_prueba = '10.48550/arXiv.2403.02159'
-      data = {"doi": doi_prueba}
+      url = url = "http://127.0.0.1:8001/extract_metadata_paper_by_DOI/"
+      doi = '10.3390/app15041934'
+      
+      data ={
+              "doi" : '10.3390/app15041934',
+              "write2File" : False
+            }
 
       response = requests.post(url, json=data)
       print(response.text)
