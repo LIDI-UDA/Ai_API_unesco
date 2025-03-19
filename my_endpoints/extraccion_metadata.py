@@ -2,242 +2,18 @@
 import json
 import requests
 import re
-import time
+import os
 from crossref.restful import Works
 from crossref.restful import Journals
 from bs4 import BeautifulSoup
 from idutils import is_doi
+import pandas as pd
+from tqdm import tqdm
 
-def extraer_metadatos_orcid(orcid_id, access_token):
-    """
-    Extrae metadatos de un perfil de ORCID usando su ID y token de acceso.
-    Args:
-        orcid_id (str): El ID de ORCID del perfil.
-        access_token (str): Tu token de acceso de ORCID.
-    Retorna:
-        dict: Un diccionario con los metadatos del perfil de ORCID, o None si ocurre un error.
-    """
-    url = f"https://api.orcid.org/v3.0/{orcid_id}"
-    headers = {
-        "Accept": "application/json",
-        "Authorization": f"Bearer {access_token}"
-    }
+from my_endpoints.extract_ORCID_info import Extract_ORCID_info
+from my_endpoints.extract_DOI_info import Extract_DOI_info
+from my_endpoints.extract_affiliation_info import Extract_affiliation_info
 
-    try:
-        respuesta = requests.get(url, headers=headers)
-        respuesta.raise_for_status()  # Lanza una excepción para códigos de estado HTTP malos (4xx o 5xx)
-        datos = respuesta.json()
-        print(datos)
-        #return datos
-    except requests.exceptions.RequestException as e:
-        print(f"Error al hacer la solicitud a la API de ORCID: {e}")
-        return None
-    except json.JSONDecodeError:
-        print("Error: La respuesta de la API no es un JSON válido.")
-        return None
-        
-
-def outputFile_json(doi, title, abstract, author, is_write=False):
-    data = {
-      "doi" : doi,
-      "title": title,
-      "abstract": abstract,
-      "author": author
-    }
-    if is_write == True:
-        with open('data_paper.json', "w") as archivo_json:
-            json.dump(data, archivo_json, indent=4)
-    else:
-        return json.dumps(data)
-        
-
-def elsevier(doi, config):
-    try:
-        apiKey = config["api_keys"]["elsevier"]
-        url = f"https://api.elsevier.com/content/article/doi/{doi}?apiKey={apiKey}&httpAccept=application/json"
-        respuesta = requests.get(url)
-        respuesta.raise_for_status()  # Lanza una excepción para códigos de estado HTTP malos (4xx o 5xx)
-        datos = respuesta.json()
-        return (datos['full-text-retrieval-response']['coredata']['dc:title']),(datos['full-text-retrieval-response']['coredata']['dc:description']), (datos['full-text-retrieval-response']['coredata']['dc:creator'])
-        
-    except requests.exceptions.RequestException as e:
-        print(f"Error al hacer la solicitud a la API de Elsevier: {e}")
-        return None
-    except KeyError:
-        print("Error: La respuesta de la API no contiene los metadatos esperados.")
-        return None
-        
-
-def crossRef(doi):
-    works = Works()
-    result = works.doi(doi)
-    _title = _abstract = _author= None
-    if ('license' in  result.keys()):
-        if 'title' in result.keys(): _title = result['title'][0] #print(result['title'][0])
-        if 'abstract' in result.keys():
-            #print(str(result['abstract']).replace('<jats:p>', '').replace('</jats:p>', '').replace('</jats:title>','').replace('<jats:title>','').replace('<jats:italic>', '').replace('</jats:italic>', ''))
-            _abstract = (str(result['abstract']).replace('<jats:p>', '').replace('</jats:p>', '').replace('</jats:title>','').replace('<jats:title>','').replace('<jats:italic>', '').replace('</jats:italic>', ''))
-        if 'author' in result.keys():
-            _author = result['author']
-            #for author in result['author']:
-            #    print(author)
-
-    else:
-        if 'title' in result.keys():
-            if 'title' in result.keys(): _title = result['title'][0] #print(result['title'][0])
-            if 'abstract' in result.keys():
-                #print(str(result['abstract']).replace('<jats:p>', '').replace('</jats:p>', '').replace('</jats:title>','').replace('<jats:title>','').replace('<jats:italic>', '').replace('</jats:italic>', ''))
-                _abstract = (str(result['abstract']).replace('<jats:p>', '').replace('</jats:p>', '').replace('</jats:title>','').replace('<jats:title>','').replace('<jats:italic>', '').replace('</jats:italic>', ''))
-            if 'author' in result.keys():
-                _author = result['author']
-                #for author in result['author']:
-                #    print(author)
-        else:
-            scrapMetadatos(doi)
-
-    return _title,_abstract, _author 
-    
-
-def springer(doi, config):
-    apikey = config["api_keys"]["springer"]
-    url = f'https://api.springernature.com/metadata/json?api_key={apikey}&callback=&s=1&p=10&q=(doi:{doi})'
-    response = requests.request("GET", url)
-    data = response.json()
-    _title = _abstract = _author= None
-    total_search = int(data['result'][0]['total'])
-    if (total_search>0):
-        for i in range(0,total_search):
-            _title = data['records'][i]['title']
-            _abstract = data['records'][i]['abstract']
-            _author = data['records'][i]['creators']
-    else:
-        _title = data['records'][0]['title']
-        _abstract = data['records'][0]['abstract']
-        _author = data['records'][0]['creators']
-        
-    return _title, _abstract, _author
-    
-
-def scrapMetadatos(doi):
-    """
-    Resuelve un DOI a su URL final utilizando el servicio de redirección de DOI.
-    """
-    url = f"https://doi.org/{doi}"
-    response = requests.get(url, allow_redirects=True)
-    
-    if response.status_code == 200:
-
-        if ('ejgo' in response.url):
-            url = response.url  # Devuelve la URL final después de las redirecciones
-            # Realizar la solicitud HTTP
-            response = requests.get(url)
-            # Parsear el contenido HTML
-            soup = BeautifulSoup(response.content, 'html.parser')
-        
-            # Extraer el título
-            title = soup.find('title').get_text(strip=True) if soup.find('title') else 'Título no encontrado'
-            print(title)
-            # Extraer autores (depende de la estructura HTML)
-            authors = [meta['content'] for meta in soup.find_all('meta', attrs={'name': 'DC.Creator'})]
-            print(authors)
-            # Extraer el resumen (depende de la estructura HTML)
-            abstract = soup.find('meta', attrs={'name': 'DC.Description'})['content']
-            print(abstract)
-            # Extraer la fecha de publicación (depende de la estructura HTML)
-            #date = soup.find('span', class_='date').get_text(strip=True) if soup.find('span', class_='date') else 'Fecha no encontrada'
-        
-        if ('arxiv' in response.url):
-            try:
-                # 1. Extraer el identificador de arXiv del DOI (usando regex)
-                match = re.search(r"10\.48550/arXiv\.(\d+\.\d+)", doi)
-                if not match:
-                    return None  # DOI no válido
-
-                arxiv_id = match.group(1)
-
-                # 2. Construir la URL de arXiv
-                url = f"https://arxiv.org/abs/{arxiv_id}"
-
-                # 3. Realizar la solicitud GET
-                response = requests.get(url)
-                response.raise_for_status()  # Lanza una excepción para códigos de error HTTP
-
-                # 4. Parsear el HTML
-                soup = BeautifulSoup(response.content, "html.parser")
-
-                # 5. Extraer metadatos (usando selectores CSS más robustos)
-                metadatos = {}
-
-                def extraer_contenido(selector, atributo='content', multiple=False):
-                    elementos = soup.select(selector)
-                    if elementos:
-                        if multiple:
-                            return [e.get(atributo) for e in elementos if e.get(atributo)] # Manejo de atributos faltantes en elementos de la lista
-                        else:
-                            elemento = elementos[0]
-                            return elemento.get(atributo) if elemento.get(atributo) else None # Manejo de atributo faltante
-                    return None
-
-                metadatos["title"] = extraer_contenido('meta[property="og:title"]')
-                metadatos["abstract"] = extraer_contenido('meta[property="og:description"]')
-                metadatos["date"] = extraer_contenido('meta[property="article:published_time"]')
-
-                metadatos["authors"] = extraer_contenido('meta[name="citation_author"]', multiple=True)
-                metadatos["categories"] = extraer_contenido('meta[name="citation_subject"]', multiple=True)
-
-                # arXiv v3 style metadata (con manejo de NoneType)
-                if not metadatos["authors"]:
-                    autores_elements = soup.select('.authors > a')
-                    metadatos["authors"] = [a.text.strip() for a in autores_elements] if autores_elements else None
-
-                if not metadatos["categories"]:
-                    categorias_elements = soup.select('.subjects')
-                    metadatos["categories"] = [c.text.strip() for c in categorias_elements] if categorias_elements else None
-                
-                return metadatos['title'], metadatos['abstract'], metadatos['authors']
-
-            except requests.exceptions.RequestException as e:
-                print(f"Error en la solicitud: {e}")
-                return None
-            except (AttributeError, TypeError) as e:  # Maneja errores si no se encuentran elementos
-                print(f"Error al parsear el HTML: {e}")
-                return None
-            except Exception as e:
-                print(f"Error inesperado: {e}")
-                return None
-    else:
-        print(f"Error: No se pudo resolver el DOI. Código de estado: {response.status_code}")
-        return None
-        
-
-def valida_formato_doi(doi):
-  return (bool(is_doi(doi)))
-    
-
-def validar_doi(doi):
-    if ('DOI' in doi):doi = doi[doi.rindex(': ')+2:]
-
-    if not valida_formato_doi(doi):
-        return False, doi
-
-    if Works().doi(doi):
-        return True, doi
-
-    try:
-        result = requests.get(f"https://doi.org/{doi}", allow_redirects=True, timeout=10)
-        return result.status_code == 200, doi
-    except requests.RequestException:
-        return False, doi
-        
-
-def journals(issn):
-    journals = Journals()
-    if (journals.journal_exists(issn)):
-        results = journals.journal(issn)
-        return results
-    else:
-        return 'Journal no exist'
-        
 
 def affiliation_search(affiliation):
     works = Works()
@@ -354,68 +130,256 @@ def affiliation_search(affiliation, yyyy, mm=None):
                     print(item['published']['date-parts'][0])
                     #print(item['published-online']['date-parts'][0])
                     print('---------------')
-                    
 
-def extractMetadata(doi, config):
-    try:
-        works = Works()
-        result = works.doi(doi)
-        _title = _abstract = _author = ''
-        if result != None:
-            if 'content-domain' in result.keys():
-                if len(result['content-domain']['domain'])>0:
-                    if("elsevier" in result['content-domain']['domain'][0]):
-                        _title, _abstract, _author = elsevier(doi, config)
-                    elif ("springer" in result['content-domain']['domain'][0]):
-                        _title, _abstract, _author = springer(doi, config) 
-                    else: 
-                        _title, _abstract, _author = crossRef(doi)
-                else:
-                    _title, _abstract, _author =crossRef(doi)
-            elif 'license' in result.keys():
-                if(len(result['license'][0]['URL'])>0):                            
-                    if "creativecommons" in result['license'][0]['URL']:
-                        _title, _abstract, _author = crossRef(doi)
-                        #print('creativecommons')
-                
-        elif('arXiv' in doi):
-            _title, _abstract, _author = scrapMetadatos(doi)
-            #print('arXiv')
+
+def extractMetadataPaper(config, doi, write2File=False):
+    '''
+    Return all meta data of work by DOI 
+
+    Parameters:
+        DOI (String): Digital Object Identifie
+        write2File (bool): All results write in a json File or in json (memory)
+    
+    Returns:
+        list: json 
+    
+    Examples:
+    >>> searchPapersByORCID('Path', "010.3390/app15041934", write2File=False)
+    '''
+     
+    info = Extract_DOI_info(doi,config)
+    is_correct, doi = info.validar_doi() #valida si existe el artículo con su DOI
+    if is_correct:
+        df_writeByDOI = pd.DataFrame(columns=['DOI', 
+                                              'Title', 
+                                              'Authors', 
+                                              'Affiliation', 
+                                              'Abstract', 
+                                              'issn',  
+                                              'Issued', 
+                                              'Published'])
+        
+        title, author, affiliation, abstract, issn, issued, published = info.extractMetadata()
+        new_row = [doi, title, author, affiliation, abstract, issn, issued, published]
+        df_writeByDOI = pd.concat([df_writeByDOI, pd.DataFrame([new_row], columns=df_writeByDOI.columns)], ignore_index=True)
+
+        if write2File == True:
+            df_writeByDOI.to_json("data_paper.json", orient="records", lines=True)
         else:
-            return None #no existe el doi
-        return _title, _abstract, _author
-        
-    except KeyError as e:
-        print(f"Error: No se encuentra el Key: {e}")
+            json_data = df_writeByDOI.to_dict(orient='records')
+            return (json_data)
+    else:
+        print(f'DOI: {doi} is incorrect.')
         return None
-        
-
-def readFiles(excel_path):
-    df = pd.read_excel(excel_path, sheet_name='Vice. Invest.')
-    df_write = pd.DataFrame(columns=['index', 'doi', 'title','abstract', 'authors'])
-    return df,df_write
     
 
-def extractMetadataPaper(doi, config):
-    is_correct, doi = validar_doi(doi) #valida si existe el artículo con su DOI
-    if is_correct:
-        title, abstract, author = extractMetadata(doi, config)
-        data = outputFile_json(doi, title, abstract, author)
-        #print(data)
-        return data
-    else:
-        print(f'DOI {doi} is incorrect.')
-        return None
-        
+def searchAuthorsByAffiliation(_affiliation, config, searchFull=False, write2File=False):
+    '''
+    Return all authors searched by a affiliation in resume o full information (include their works)
 
-def extractMetadataPapers(inputFile):
-    df, dfwrite = readFiles(inputFile)
-    unique_dois = df['Id Documento'].astype(str).unique().tolist()
-    for doi in unique_dois:  
-        is_correct, doi = validar_doi(doi) #valida si existe el artículo con su DOI
-        if is_correct:
-            title, abstract, author = extractMetadata(doi)
-            data = outputFile_json(doi, title, abstract, author)
-            #print(data)
+    Parameters:
+        _affiliation (String): The name of the affiliation
+        searchFull (bool):  Full search that include alls works or simple search
+        write2File (bool): All results write in a File or in json
+    
+    Returns:
+        list: json 
+    
+    Examples:
+    >>> searchAuthorsByAffiliation("Universidad del Azuay", searchFull=False, write2File=False)
+    '''
+    # Configuración de la API de ORCID
+    ORCID_API_URL = "https://pub.orcid.org/v3.0/search/"
+
+    # Parámetros de búsqueda
+    query = f"affiliation-org-name:\"{_affiliation}\""  # Reemplaza "Universidad" con el nombre de la universidad que buscas
+    start = 0
+    rows = 1000  # Número de resultados por página
+    all_researchers = []
+
+    # Encabezados de la solicitud
+    headers = {
+        "Accept": "application/json",
+        #"Authorization": f"Bearer {ACCESS_TOKEN}"
+    }
+
+    # Realizar la solicitud a la API de ORCID
+    response = requests.get(ORCID_API_URL, headers=headers, params={
+        "q": query,
+        #"start": start,
+        #"rows": rows
+        "start": start
+    })
+
+    if response.status_code == 200:
+        data_prime = response.json()
+        max_results = data_prime.get("num-found", [])
+        print(max_results)
+        print(searchFull)
+        if searchFull:
+            df_writeByORCID = pd.DataFrame(columns=['ORCID', 'Name' ,'DOI', 'Title', 'Abstract','Author',  'Issued', 'Published'])
         else:
-            print(f'--> DOI {doi} is incorrect.')
+            df_writeByORCID = pd.DataFrame(columns=['ORCID', 'Name' ,'Affiliation', 'Status'])        
+
+    while start < max_results:
+        response = requests.get(ORCID_API_URL, headers=headers, params={
+        "q": query,
+        "start": start,
+        "rows": rows
+        })
+
+        # Verificar si la solicitud fue exitosa
+        if response.status_code == 200:
+            # Procesar la respuesta JSON
+            data = response.json()
+            researchers = data.get("result", [])
+            count = data.get("num-found", [])
+            # Mostrar los resultados
+            for researcher in tqdm(researchers, total= len(researchers), desc=f"Researchers in {_affiliation}", unit=" Person", ncols=100, colour='blue', position=0, leave=False):
+                orcid_id = researcher.get("orcid-identifier", {}).get("path") #Se obtiene el ORCID
+                _status = 'Innactive'
+                # URL base de la API de ORCID
+                BASE_URL = f'https://pub.orcid.org/v3.0/{orcid_id}'
+                # Realizar la solicitud GET
+                response = requests.get(BASE_URL, headers=headers)
+                
+                # Verificar si la solicitud fue exitosa
+                if response.status_code == 200: 
+                    data_orcid = response.json()
+                    orcid_profile = data_orcid.get('person', {})
+                    name = orcid_profile.get('name', {})
+                    if name:
+                        if name.get('given-names', {}) is not None and name.get('given-names', {}).get('value') is not None:
+                            given_name = name.get('given-names', {}).get('value')
+                        else:
+                            given_name = 'N/A'
+
+                        if name.get('family-name', {}) is not None and name.get('family-name', {}).get('value') is not None:
+                            family_name = name.get('family-name', {}).get('value')
+                        else:
+                            family_name = 'N/A'
+
+                    name = (f"{family_name.replace('N/A','').upper()}, {given_name.upper()}")
+                    affiliation = researcher.get("orcid-profile", {}).get("orcid-activities", {}).get("affiliations", {}).get("affiliation", [])
+
+                    if len(affiliation) > 0 :
+                        for aff in affiliation:
+                            org_name = aff.get("organization", {}).get("name")
+                            print(f"  - {org_name}")
+                    else:
+                        works = data_orcid.get('activities-summary', {}).get('works', {}).get('group', [])
+                        if works:
+                            for work in works:
+                                work_summary = work.get('work-summary', [{}])[0]
+                                # Verificar si existe DOI
+                                if work_summary.get('external-ids', {}) != None:
+                                    external_ids = work_summary.get('external-ids', {}).get('external-id', []) if work_summary.get('external-ids') else 'N/A'
+                                    doi = 'N/A'
+                                    for external_id in external_ids:
+                                        if external_id.get('external-id-type') == 'doi':
+                                            doi = external_id.get('external-id-value', 'N/A')
+                                            break
+                                    if ((doi != 'N/A')):
+                                        _doi = (f"{doi if doi != 'N/A' else 'No disponible'}")
+                                        info = Extract_DOI_info(doi,config)
+                                        _title, author, org_name, abstract, issn, _issued, _published = info.extractMetadata()
+                                        org_name = _affiliation
+                                        _status = 'Active'
+                                        if searchFull:
+                                            new_row = [orcid_id, name, _doi, _title, abstract, author,  _issued, _published]
+                                            df_writeByORCID = pd.concat([df_writeByORCID, pd.DataFrame([new_row], columns=df_writeByORCID.columns)], ignore_index=True)
+                                        else:
+                                            break;
+                                else:
+                                    break;
+                        else:
+                            org_name = _affiliation
+                        
+                    if searchFull ==False:    
+                        new_row = [orcid_id, name, org_name, _status]
+                        df_writeByORCID = pd.concat([df_writeByORCID, pd.DataFrame([new_row], columns=df_writeByORCID.columns)], ignore_index=True)
+            # Verificar si hay más resultados
+            if len(researchers) < rows or start + rows >= max_results:
+                if write2File:
+                    if searchFull:
+                        df_writeByORCID.to_excel(f'{os.getcwd()}/Researchers In {_affiliation} - Full.xlsx')
+                    else:
+                        df_writeByORCID.to_excel(f'{os.getcwd()}/Researchers In {_affiliation}.xlsx')
+                else:
+                    json_data = df_writeByORCID.to_dict(orient='records')
+                    return (json_data)  
+                break  # No hay más resultados
+            
+            start += rows  # Avanzar al siguiente bloque de resultados 
+              
+        else:
+            print(f"Error en la solicitud: {response.status_code}")
+            print(response.text)
+            break # Detener si hay un error
+
+def searchPapersByORCID(config, inputFile=None, orcid=None, write2File=False):
+    '''
+    Return all works searched by a ORCID 
+
+    Parameters:
+        inputFile (String): The path of the read file in Excel format
+        orcid (String):  Researcher ID
+        write2File (bool): All results write in a File or in json
+    
+    Returns:
+        list: json 
+    
+    Examples:
+    >>> searchPapersByORCID('Path', "0000-8123-2323-xxxx", write2File=False)
+    '''
+    df_writeByORCID = pd.DataFrame(columns=['ORCID', 'Name' ,'DOI', 'Title', 'Abstract', 'Authors','Publication type',  'Issued', 'Published'])
+    if (inputFile != '') and (orcid == ''):
+        df = pd.read_excel(inputFile, sheet_name='DocentesUDA')
+        # Filtra las filas donde 'Orcid' no es nulo ni está en blanco
+        df = df[df['Orcid'].astype(str).str.strip() != '-']
+        unique_orcid = df['Orcid'].astype(str).unique().tolist()
+        df_writeByORCID = pd.DataFrame(columns=['ORCID', 'Name' ,'DOI', 'Title', 'Abstract', 'Authors','Publication type',  'Issued', 'Published'])        
+        for orcid in tqdm(unique_orcid, total= len(unique_orcid), desc="Researchers ", unit=" Researcher", ncols=100, colour='blue', position=0, leave=False):
+            df_writeByORCID = Extract_ORCID_info.extracInfoORCID(orcid, df_writeByORCID)
+    
+    elif (orcid != '') and (inputFile == ''):
+        info = Extract_ORCID_info(orcid, config)
+        df_writeByORCID = info.extracInfoORCID(df_writeByORCID)
+    else:
+        return None
+    
+    if write2File:
+        df_writeByORCID.to_excel(f'{os.getcwd()}/papersByOrcid.xlsx')
+    else:
+        json_data = df_writeByORCID.to_dict(orient='records')
+        return (json_data)
+
+
+def searchPapersByAffiliation(config, affiliation, from_date, to_date, write2File=False):
+    '''
+    Return all works searched by an Affiliation
+
+    Parameters:
+        affiliation (String): The name of the affiliation
+        from_date (String): Date the works search begins
+        to+date (String): Date the works search ends
+        write2File (bool): All results write in a File or in json
+    
+    Returns:
+        list: json 
+    
+    Examples:
+    >>> searchPapersByAffiliation('Affiliation', '2024-11', '2024-12', write2File=False)
+    '''
+    info = Extract_affiliation_info(config, affiliation, from_date, to_date)
+    df_write = pd.DataFrame(columns=['DOI', 'Title','Authors', 'Abstract', 'ISSN', 'Issued', 'Published'])
+    df_write_crossRef = info.affiliation_search_crossRef()
+    df_write_elsevier = info.affiliation_search_Elsevier()
+    df_write_ByOrcid = info.affiliation_search_byOrcid()
+    df_write = pd.concat([df_write_crossRef, df_write_elsevier, df_write_ByOrcid])
+    df_write = df_write.drop_duplicates(subset='DOI', keep='first').reset_index(drop=True)
+    if write2File:
+        df_write.to_excel(f'{os.getcwd()}/papers in {affiliation} between {from_date}_{to_date}.xlsx')
+    else:
+        json_data = df_write.to_dict(orient='records')
+        return (json_data)
