@@ -80,11 +80,10 @@ async def classify_article(article: ArticleInput):
 # utilizando su título y abstract (si existe)
 @app.post("/classify_by_doi/")
 async def get_metadata(doi: DoiInput):
-    metadata = json.loads(extraccion_metadata.extractMetadataPaper(doi.doi,
-                                                                   config))
-    #print(metadata)
-    classification = clasificacion_articulos.classify_paper(metadata['title'], 
-                                                            metadata['abstract'],
+    metadata = extraccion_metadata.extractMetadataPaper(config,
+                                                        doi.doi)
+    classification = clasificacion_articulos.classify_paper(metadata['Title'], 
+                                                            metadata['Abstract'],
                                                             unesco_options,
                                                             unesco_search,
                                                             client,
