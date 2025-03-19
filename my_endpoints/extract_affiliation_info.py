@@ -135,9 +135,14 @@ class Extract_affiliation_info:
         # Parámetros de la solicitud
         params = {
             #'query': f'AF-ID({"\"{affiliation}\" 60108706"}) AND PUBDATETXT("{_fromDate}" OR "{_toDate}")  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
-            'query': f'AF-ID({"\"{self.affiliation}\" 60108706"}) AND PUBDATETXT({_dateString})  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
+            # 'query': f'AF-ID({"\"{self.affiliation}\" 60108706"}) AND PUBDATETXT({_dateString})  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
+            # 'apiKey': apiKey_elsevier,
+            # 'count' : 200,
+            # 'httpAccept': 'application/json'
+            'query': f'AF-ID("{self.affiliation} 60108706") AND PUBDATETXT({_dateString}) '
+             f'AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
             'apiKey': apiKey_elsevier,
-            'count' : 200,
+            'count': 200,
             'httpAccept': 'application/json'
         }
 
