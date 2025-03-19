@@ -51,6 +51,20 @@ class ArticleInput(BaseModel):
 class DoiInput(BaseModel):
     doi: str
 
+# Validación de datos para solicitudes del endpoint "seach_authors_by_affiliation"
+class AffiliationInput(BaseModel):
+    affiliation: str
+    searchFull: bool
+    write2File: bool
+    from_date: str
+    to_date: str
+
+# Validación de datos para solicitudes del endpoint "seach_authors_by_affiliation"
+class OrcidInput(BaseModel):
+    inputFile: str
+    orcid: str
+    write2File: bool
+
 # Endpoint para clasificar un artículo
 @app.post("/classify/")
 async def classify_article(article: ArticleInput):
@@ -76,3 +90,27 @@ async def get_metadata(doi: DoiInput):
                                                             client,
                                                             config)
     return classification
+
+# Endpoint to extract metadata from an article and classify it using affiliation
+@app.post("/seach_authors_by_affiliation/")
+async def get_authors(affiliation: AffiliationInput):
+    authors = extraccion_metadata.searchAuthorsByAffiliation(affiliation.affiliation, config, affiliation.searchFull, affiliation.write2File)
+    return authors
+
+# Endpoint to extract metadata from a researcher's publications using ORCID
+@app.post("/search_papers_by_ORCID/")
+async def get_publications(orcid: OrcidInput):
+    publications = extraccion_metadata.searchPapersByORCID(config, orcid.inputFile, orcid.orcid, orcid.write2File)
+    return publications
+
+# Endpoint to extract metadata from academic work using DOI
+@app.post("/extract_metadata_paper_by_DOI/")
+async def get_info_publication(doi: DoiInput):
+    metadata = extraccion_metadata.extractMetadataPaper(config, doi.doi)
+    return metadata
+
+# Endpoint to extract metadata from academic work using affiliation
+@app.post("/search_papers_by_Affiliation/")
+async def get_info_publications(affiliation: AffiliationInput):
+    metadata = extraccion_metadata.searchPapersByAffiliation(config, affiliation.affiliation, affiliation.from_date, affiliation.to_date, affiliation.write2File)
+    return metadata
