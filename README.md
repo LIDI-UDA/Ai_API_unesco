@@ -377,5 +377,64 @@ Once the service is running, the following **Endpoints** will be available:
       print(response.text)
 
 
+#### /search_papers_by_orcid/
+- Description: This endpoint is responsible for obtaining all relevant information of an article from the **DOI**, giving the option to return it with a **JSON** or write it to a JSON file. 
+- Method: **POST**
+- Input:
+    - Data type: **JSON**
+    - Expected structure:
+
+          {"orcid" : ORCID del investigador, e.g: '0000-0002-5339-7860' , "write2File" : False}
+
+    - Note: The **DOI** is required, and the **write2File** field should be left False by default.
+- Output data:
+    - Data type: **JSON**
+    - Example output:
+
+          [
+            {
+              "ORCID":"0000-0002-5339-7860",
+              "Name":"ZAMBRANO-MARTINEZ JORGE LUIS",
+              "DOI":"10.3390/app15041934",
+              "Title":"Evaluating the Impact of Membership Functions and Defuzzification Methods in a Fuzzy System: Case of Air Quality Levels","Abstract":"Since the 1960s, fuzzy logic has contributed to developing control systems based on modeling nonlinear problems using linguistic terms and inference rules. In the air quality domain, fuzzy logic has allowed us to tackle inferential environmental systems that are tolerant of human uncertainty and aimed at decision support. These systems are composed of three processes: a function to define a membership degree of the system’s value concerning a human linguistic term; an inference engine for decision making; and defuzzification methods focused on transforming the aggregated fuzzy set into a real-world value. Over the years, multiple mathematical formulas have been proposed to enrich membership functions or defuzzification methods; however, their use is sometimes limited to classical functions, limiting the importance of other proposals. This paper aims to evaluate the impact of the transformation functions in an air quality fuzzy system. The results of this work prove that the defuzzification method has a more significant effect than the others. It should be noted that by considering these results or their evaluation method, the quality of future fuzzy systems can be improved in both industrial and academic domains.",
+              "Authors":"Juan Fernando Lima; Andrés Patiño-León; Marcos Orellana; Jorge Luis Zambrano-Martinez",
+              "Publication type":"journal-article",
+              "Issued":"2025-2-13",
+              "Published":"2025-2-13"
+            },
+            {  
+              "ORCID":"0000-0002-5339-7860","Name":"ZAMBRANO-MARTINEZ JORGE LUIS","DOI":"10.5281/zenodo.14448094",
+              "Title":"Data Visualization Model for Multi-party Analysis and Strategic Decision-Making in International Trade",
+              "Abstract":"This paper presents a detailed analysis of Ecuador&rsquo;s non-oil exports over ten years. The study was performed using the SPEM methodology and data-cleaning processes. The results highlight a notable coherence in analyzing the most relevant export items and the main trading partners, providing essential information for strategic decision-making. Furthermore, recommendations related to the technical conditions necessary to achieve precise and accurate communication through data visualization were considered, and adequate answers to the questions generated in the business knowledge stage contributed to the users&rsquo; knowledge. Furthermore, the study suggests incorporating import data to enhance the analysis and provide a foundation for future research in this area.",
+              "Authors":"Molina Alarcón, Inés Paola; Tonon Ordóñez, Luis Bernardo; Zambrano-Martinez, Jorge Luis; Orellana, Marcos",
+              "Publication type":"journal-article",
+              "Issued":null,
+              "Published":"2025-01-07"
+            },
+            {
+              "ORCID":"0000-0002-5339-7860","Name":"ZAMBRANO-MARTINEZ JORGE LUIS","DOI":"10.1007/978-3-031-75431-9_9",
+              "Title":"Automatic Parking Space Segmentation Using K-Means Clustering and Image Processing Techniques",
+              "Abstract":"Proper management of parking spaces is essential in urban environments. This study proposes an approach for parking space segmentation using the K-means algorithm and the OpenCV library. The main objective is to determine the trapezoid describing the parking area by analyzing data previously collected from multiple photographs. These images contain several vehicles parked in different dispositions and moments in time. For this, the coordinates of the four leading edges that compose each car were considered. The previously obtained data were used to estimate the trapezoid defining each photograph’s parking zone. This approach combines segmentation and image processing techniques to delimit parking spaces in urban environments.",
+              "Authors":"Anthony Xavier Romero Gonzalez; Kevin Sebastian Campoverde Ambrosi; Patricio Eduardo Ramon Celi; Alexandra Bermeo; Marcos Orellana; Jorge Luis Zambrano-Martinez; Patricio Santiago García-Montero",
+              "Publication type":"book-chapter",
+              "Issued":"2024-10-10",
+              "Published":"2024-10-10"
+            }
+          ]
+- Example code with **requests** in Python:
+  
+      url = "http://127.0.0.1:8002/search_papers_by_orcid/"
+      
+      data ={
+          "inputFile" : '',
+          "orcid" : "0000-0002-5339-7860",
+          "write2File" : False
+      }
+      
+      response = requests.post(url, json=data)
+      print(response.text)
+      
+
+
 #### More endpoints coming soon...
 #### UI App coming soon...
