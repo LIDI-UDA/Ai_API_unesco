@@ -187,7 +187,9 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
               "Published":"2025-2-13"
             },
             {  
-              "ORCID":"0000-0002-5339-7860","Name":"ZAMBRANO-MARTINEZ JORGE LUIS","DOI":"10.5281/zenodo.14448094",
+              "ORCID":"0000-0002-5339-7860",
+              "Name":"ZAMBRANO-MARTINEZ JORGE LUIS",
+              "DOI":"10.5281/zenodo.14448094",
               "Title":"Data Visualization Model for Multi-party Analysis and Strategic Decision-Making in International Trade",
               "Abstract":"This paper presents a detailed analysis of Ecuador&rsquo;s non-oil exports over ten years. The study was performed using the SPEM methodology and data-cleaning processes. The results highlight a notable coherence in analyzing the most relevant export items and the main trading partners, providing essential information for strategic decision-making. Furthermore, recommendations related to the technical conditions necessary to achieve precise and accurate communication through data visualization were considered, and adequate answers to the questions generated in the business knowledge stage contributed to the users&rsquo; knowledge. Furthermore, the study suggests incorporating import data to enhance the analysis and provide a foundation for future research in this area.",
               "Authors":"Molina Alarcón, Inés Paola; Tonon Ordóñez, Luis Bernardo; Zambrano-Martinez, Jorge Luis; Orellana, Marcos",
@@ -196,7 +198,9 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
               "Published":"2025-01-07"
             },
             {
-              "ORCID":"0000-0002-5339-7860","Name":"ZAMBRANO-MARTINEZ JORGE LUIS","DOI":"10.1007/978-3-031-75431-9_9",
+              "ORCID":"0000-0002-5339-7860",
+              "Name":"ZAMBRANO-MARTINEZ JORGE LUIS",
+              "DOI":"10.1007/978-3-031-75431-9_9",
               "Title":"Automatic Parking Space Segmentation Using K-Means Clustering and Image Processing Techniques",
               "Abstract":"Proper management of parking spaces is essential in urban environments. This study proposes an approach for parking space segmentation using the K-means algorithm and the OpenCV library. The main objective is to determine the trapezoid describing the parking area by analyzing data previously collected from multiple photographs. These images contain several vehicles parked in different dispositions and moments in time. For this, the coordinates of the four leading edges that compose each car were considered. The previously obtained data were used to estimate the trapezoid defining each photograph’s parking zone. This approach combines segmentation and image processing techniques to delimit parking spaces in urban environments.",
               "Authors":"Anthony Xavier Romero Gonzalez; Kevin Sebastian Campoverde Ambrosi; Patricio Eduardo Ramon Celi; Alexandra Bermeo; Marcos Orellana; Jorge Luis Zambrano-Martinez; Patricio Santiago García-Montero",
