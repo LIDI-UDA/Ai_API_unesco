@@ -289,6 +289,74 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       response = requests.post(url, json=data)
       print(response.text)
 
+
+#### /search_papers_by_Affiliation/
+- Descripción: Este endpoint se encarga de obtener todas las publicaciones por la afiliación colocada. En el caso que se desea realizar una búsqueda completa, donde se extrae la información del autor y los artículos realizados con la afiliación colocada, es necesario activar **searchFull**, y se puede discernir entre fechas (año-mes).
+- Método: **POST**
+- Datos de entrada:
+    - Tipo de dato: **JSON**
+    - Estructura esperada:
+
+          {
+            "affiliation" : Afiliación a buscar, e.g: 'Universidad del Azuay',
+            "searchFull" : False,
+            "from_date" : '2024-01',
+            "to_date" : '2024-12',
+            "write2File" : False
+          }
+
+  - Nota: El campo **affiliation** es obligatorio, y los campo **searchFull**, **write2File** dejarlo en False por defecto.
+- Datos de salida:
+    - Tipo de dato: **JSON**
+    - Ejemplo de salida:
+
+           [
+            {
+              "DOI":"10.3390/biomedicines12112509",
+              "Title":"Differential Protein-Coding Gene Expression Profile in Patients with Prostate Cancer",
+              "Authors":"Lorena Albarracín-Navas; Maylin Almonte-Becerril; Enmanuel Guerrero; Josue Rivadeneira; Marcelino Telechea-Fernández; Elizabeth Guzmán; Fanny Calderón; María José Hernández-Leal; Tamara Otzen; Carlos Manterola; Galo Duque; Ángela L. Riffo-Campos",
+              "Abstract":"Background: Prostate cancer is the second most common neoplasm in men, with projections estimating over one million new cases by 2045. Differentially expressed genes can significantly enhance the diagnosis, treatment, monitoring, and prognosis of this disease. Purpose: to systematically review and analyze validated differentially expressed mRNAs in prostate cancer patients to propose a robust molecular profile for clinical diagnostics. Methods: A systematic review was conducted following PRISMA guidelines, searching literature databases for mRNAs with validated differential expression in adult prostate cancer patients. Identified mRNAs were analyzed using STRING, Cytoscape, and DrugBank to explore protein–protein interactions and potential drug targets. Results: A total of 5003 participants from Europe, Asia, America, and Oceania were included, and 144 mRNAs (p &lt; 0.05) were reported across 75 primary articles, predominantly validated using RT-qPCR with tissue samples. Among these, at least 36 mRNAs were identified as targets for cancer-related drugs. Enrichment analysis revealed the top pathways were associated with cancer, including specific prostate cancer terms. Key nodes emerged as hubs in the protein–protein interaction network. Conclusion: Based on our comprehensive in silico analysis of validated differentially expressed mRNAs, we propose a molecular profile of twenty-five mRNAs with significant potential for clinical diagnosis of prostate cancer. These findings offer a valuable foundation for developing precision oncology strategies to improve patient outcomes.",
+              "ISSN":"2227-9059",
+              "Issued":"2024-11-1",
+              "Published":"2024-11-1"
+            },
+            {
+              "DOI":"10.3390/ecsoc-28-20159",
+              "Title":"Development of Quantitative Structure–Anti-Inflammatory Relationships of Alkaloids",
+              "Authors":"Cristian Rojas; Doménica Muñoz; Ivanna Cordero; Belén Tenesaca; Davide Ballabio",
+              "Abstract":null,
+              "ISSN":null,
+              "Issued":"2024-11-14",
+              "Published":"2024-11-14"
+            },
+            {
+              "DOI":"10.3390/rs16224271",
+              "Title":"Mapping Polylepis Forest Using Sentinel, PlanetScope Images, and Topographical Features with Machine Learning",
+              "Authors":"Diego Pacheco-Prado; Esteban Bravo-López; Luis Á. Ruiz",
+              "Abstract":"Globally, there is a significant trend in the loss of native forests, including those of the Polylepis genus, which are essential for soil conservation across the Andes Mountain range. These forests play a critical role in regulating water flow, promoting soil regeneration, and retaining essential nutrients and sediments, thereby contributing to the soil conservation of the region. In Ecuador, these forests are often fragmented and isolated in areas of high cloud cover, making it difficult to use remote sensing and spectral vegetation indices to detect this forest species. This study developed twelve scenarios using medium- and high-resolution satellite data, integrating datasets such as Sentinel-2 and PlanetScope (optical), Sentinel-1 (radar), and the Sigtierras project topographic data. The scenarios were categorized into two groups: SC1–SC6, combining 5 m resolution data, and SC7–SC12, combining 10 m resolution data. Additionally, each scenario was tested with two target types: multiclass (distinguishing Polylepis stands, native forest, Pine, Shrub vegetation, and other classes) and binary (distinguishing Polylepis from non-Polylepis). The Recursive Feature Elimination technique was employed to identify the most effective variables for each scenario. This process reduced the number of variables by selecting those with high importance according to a Random Forest model, using accuracy and Kappa values as criteria. Finally, the scenario that presented the highest reliability was SC10 (Sentinel-2 and Topography) with a pixel size of 10 m in a multiclass target, achieving an accuracy of 0.91 and a Kappa coefficient of 0.80. For the Polylepis class, the User Accuracy and Producer Accuracy were 0.90 and 0.89, respectively. The findings confirm that, despite the limited area of the Polylepis stands, integrating topographic and spectral variables at a 10 m pixel resolution improves detection accuracy.",
+              "ISSN":"2072-4292",
+              "Issued":"2024-11-16",
+              "Published":"2024-11-16"
+            }
+          ]
+     
+      
+
+- Código de ejemplo con **requests** en Python:
+
+      rl = "http://127.0.0.1:8001/search_papers_by_Affiliation/"
+
+      data ={
+          "affiliation" : "Universidad del Azuay", 
+          "searchFull" : False,
+          "from_date" : '2024-01',
+          "to_date" : '2024-12',
+          "write2File" : False
+      }
+      
+      response = requests.post(url, json=data)
+      print(response.text)
+
 #### Más endpoints en construcción...
 ### Aplicación UI en construcción...
   
@@ -570,6 +638,72 @@ Once the service is running, the following **Endpoints** will be available:
           "write2File" : False
       }
 
+      response = requests.post(url, json=data)
+      print(response.text)
+
+  #### /search_papers_by_Affiliation/
+- Description: This endpoint is responsible for retrieving all publications by the specified affiliation. If you want to perform a full search, which extracts author information and articles published with the specified affiliation, you must activate **searchFull**, and you can distinguish between dates (year-month).
+- Method: **POST**
+- Input:
+    - Data type: **JSON**
+    - Expected structure:
+
+          {
+            "affiliation" : Afiliación a buscar, e.g: 'Universidad del Azuay',
+            "searchFull" : False,
+            "from_date" : '2024-11',
+            "to_date" : '2024-12',
+            "write2File" : False
+          }
+  
+    - Note: The **affiliation** is required, and the **searchFull**, **write2File** field should be left False by default.
+- Output data:
+    - Data type: **JSON**
+    - Example output:
+
+          [
+            {
+              "DOI":"10.3390/biomedicines12112509",
+              "Title":"Differential Protein-Coding Gene Expression Profile in Patients with Prostate Cancer",
+              "Authors":"Lorena Albarracín-Navas; Maylin Almonte-Becerril; Enmanuel Guerrero; Josue Rivadeneira; Marcelino Telechea-Fernández; Elizabeth Guzmán; Fanny Calderón; María José Hernández-Leal; Tamara Otzen; Carlos Manterola; Galo Duque; Ángela L. Riffo-Campos",
+              "Abstract":"Background: Prostate cancer is the second most common neoplasm in men, with projections estimating over one million new cases by 2045. Differentially expressed genes can significantly enhance the diagnosis, treatment, monitoring, and prognosis of this disease. Purpose: to systematically review and analyze validated differentially expressed mRNAs in prostate cancer patients to propose a robust molecular profile for clinical diagnostics. Methods: A systematic review was conducted following PRISMA guidelines, searching literature databases for mRNAs with validated differential expression in adult prostate cancer patients. Identified mRNAs were analyzed using STRING, Cytoscape, and DrugBank to explore protein–protein interactions and potential drug targets. Results: A total of 5003 participants from Europe, Asia, America, and Oceania were included, and 144 mRNAs (p &lt; 0.05) were reported across 75 primary articles, predominantly validated using RT-qPCR with tissue samples. Among these, at least 36 mRNAs were identified as targets for cancer-related drugs. Enrichment analysis revealed the top pathways were associated with cancer, including specific prostate cancer terms. Key nodes emerged as hubs in the protein–protein interaction network. Conclusion: Based on our comprehensive in silico analysis of validated differentially expressed mRNAs, we propose a molecular profile of twenty-five mRNAs with significant potential for clinical diagnosis of prostate cancer. These findings offer a valuable foundation for developing precision oncology strategies to improve patient outcomes.",
+              "ISSN":"2227-9059",
+              "Issued":"2024-11-1",
+              "Published":"2024-11-1"
+            },
+            {
+              "DOI":"10.3390/ecsoc-28-20159",
+              "Title":"Development of Quantitative Structure–Anti-Inflammatory Relationships of Alkaloids",
+              "Authors":"Cristian Rojas; Doménica Muñoz; Ivanna Cordero; Belén Tenesaca; Davide Ballabio",
+              "Abstract":null,
+              "ISSN":null,
+              "Issued":"2024-11-14",
+              "Published":"2024-11-14"
+            },
+            {
+              "DOI":"10.3390/rs16224271",
+              "Title":"Mapping Polylepis Forest Using Sentinel, PlanetScope Images, and Topographical Features with Machine Learning",
+              "Authors":"Diego Pacheco-Prado; Esteban Bravo-López; Luis Á. Ruiz",
+              "Abstract":"Globally, there is a significant trend in the loss of native forests, including those of the Polylepis genus, which are essential for soil conservation across the Andes Mountain range. These forests play a critical role in regulating water flow, promoting soil regeneration, and retaining essential nutrients and sediments, thereby contributing to the soil conservation of the region. In Ecuador, these forests are often fragmented and isolated in areas of high cloud cover, making it difficult to use remote sensing and spectral vegetation indices to detect this forest species. This study developed twelve scenarios using medium- and high-resolution satellite data, integrating datasets such as Sentinel-2 and PlanetScope (optical), Sentinel-1 (radar), and the Sigtierras project topographic data. The scenarios were categorized into two groups: SC1–SC6, combining 5 m resolution data, and SC7–SC12, combining 10 m resolution data. Additionally, each scenario was tested with two target types: multiclass (distinguishing Polylepis stands, native forest, Pine, Shrub vegetation, and other classes) and binary (distinguishing Polylepis from non-Polylepis). The Recursive Feature Elimination technique was employed to identify the most effective variables for each scenario. This process reduced the number of variables by selecting those with high importance according to a Random Forest model, using accuracy and Kappa values as criteria. Finally, the scenario that presented the highest reliability was SC10 (Sentinel-2 and Topography) with a pixel size of 10 m in a multiclass target, achieving an accuracy of 0.91 and a Kappa coefficient of 0.80. For the Polylepis class, the User Accuracy and Producer Accuracy were 0.90 and 0.89, respectively. The findings confirm that, despite the limited area of the Polylepis stands, integrating topographic and spectral variables at a 10 m pixel resolution improves detection accuracy.",
+              "ISSN":"2072-4292",
+              "Issued":"2024-11-16",
+              "Published":"2024-11-16"
+            }
+          ]
+     
+      
+- Example code with **requests** in Python:
+
+       url = "http://127.0.0.1:8001/search_papers_by_Affiliation/"
+
+      data ={
+          "affiliation" : "Universidad del Azuay", 
+          "searchFull" : False,
+          "from_date" : '2024-11',
+          "to_date" : '2024-12',
+          "write2File" : False
+      }
+      
       response = requests.post(url, json=data)
       print(response.text)
 
