@@ -207,7 +207,7 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
           ]
 - Código de ejemplo con **requests** en Python:
   
-      url = "http://127.0.0.1:8002/search_papers_by_orcid/"
+      url = "http://127.0.0.1:8001/search_papers_by_orcid/"
       
       data ={
           "inputFile" : '',
@@ -215,6 +215,73 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
           "write2File" : False
       }
       
+      response = requests.post(url, json=data)
+      print(response.text)
+
+#### /seach_authors_by_affiliation/
+- Descripción: Este endpoint se encarga de obtener todos los autores que están dentro de la afiliación colocada. En el caso que se desea realizar una búsqueda completa, donde se extrae la información del autor y los artículos realizados con la afiliación colocada, es necesario activar **searchFull**, y se puede discernir entre fechas (año-mes).
+- Método: **POST**
+- Datos de entrada:
+    - Tipo de dato: **JSON**
+    - Estructura esperada:
+
+          {
+            "affiliation" : Afiliación a buscar, e.g: 'Universidad del Azuay',
+            "searchFull" : False,
+            "from_date" : '2024-11',
+            "to_date" : '2024-12',
+            "write2File" : False
+          }
+  - Nota: El campo **affiliation** es obligatorio, y los campo **searchFull**, **write2File** dejarlo en False por defecto.
+- Datos de salida:
+    - Tipo de dato: **JSON**
+    - Ejemplo de salida:
+
+          [
+            {
+              "ORCID":"0000-0001-7191-2056",
+              "Name":"MARTÍNEZ-URGILÉS, EMANUEL",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0002-1276-9007",
+              "Name":"RODAS, DIANA",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0002-5992-9530",
+              "Name":"MOSCOSO AMADOR, MARIA DE LOURDES",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0001-5076-0372",
+              "Name":"MEDINA ALTAMIRANO, SEBASTIÁN DIEGO ",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Innactive"
+            },
+            {
+              "ORCID":"0000-0003-2108-412X",
+              "Name":"TAPIA, EULALIA",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Innactive"
+            }
+          ]
+      
+- Código de ejemplo con **requests** en Python:
+
+      url = "http://127.0.0.1:8001/seach_authors_by_affiliation/"
+
+      data ={
+          "affiliation" : "Universidad del Azuay",
+          "searchFull" : False,
+          "from_date" : '',
+          "to_date" : '',
+          "write2File" : False
+      }
+
       response = requests.post(url, json=data)
       print(response.text)
 
@@ -423,7 +490,7 @@ Once the service is running, the following **Endpoints** will be available:
           ]
 - Example code with **requests** in Python:
   
-      url = "http://127.0.0.1:8002/search_papers_by_orcid/"
+      url = "http://127.0.0.1:8001/search_papers_by_orcid/"
       
       data ={
           "inputFile" : '',
@@ -434,7 +501,73 @@ Once the service is running, the following **Endpoints** will be available:
       response = requests.post(url, json=data)
       print(response.text)
       
+#### /seach_authors_by_affiliation/
+- Description: This endpoint is responsible for retrieving all authors within the specified affiliation. If you want to perform a full search, which extracts author information and articles written with the specified affiliation, you must activate **searchFull**, and you can distinguish between dates (year-month).
+- Method: **POST**
+- Input:
+    - Data type: **JSON**
+    - Expected structure:
 
+          {
+            "affiliation" : Afiliación a buscar, e.g: 'Universidad del Azuay',
+            "searchFull" : False,
+            "from_date" : '2024-11',
+            "to_date" : '2024-12',
+            "write2File" : False
+          }
+  
+    - Note: The **affiliation** is required, and the **searchFull**, **write2File** field should be left False by default.
+- Output data:
+    - Data type: **JSON**
+    - Example output:
+
+          [
+            {
+              "ORCID":"0000-0001-7191-2056",
+              "Name":"MARTÍNEZ-URGILÉS, EMANUEL",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0002-1276-9007",
+              "Name":"RODAS, DIANA",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0002-5992-9530",
+              "Name":"MOSCOSO AMADOR, MARIA DE LOURDES",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Active"
+            },
+            {
+              "ORCID":"0000-0001-5076-0372",
+              "Name":"MEDINA ALTAMIRANO, SEBASTIÁN DIEGO ",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Innactive"
+            },
+            {
+              "ORCID":"0000-0003-2108-412X",
+              "Name":"TAPIA, EULALIA",
+              "Affiliation":"Universidad del Azuay",
+              "Status":"Innactive"
+            }
+          ]
+      
+- Example code with **requests** in Python:
+
+      url = "http://127.0.0.1:8001/seach_authors_by_affiliation/"
+
+      data ={
+          "affiliation" : "Universidad del Azuay",
+          "searchFull" : False,
+          "from_date" : '',
+          "to_date" : '',
+          "write2File" : False
+      }
+
+      response = requests.post(url, json=data)
+      print(response.text)
 
 #### More endpoints coming soon...
 #### UI App coming soon...
