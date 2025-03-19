@@ -120,6 +120,40 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
       response = requests.post(url, json=data)
       print(response.text)
 
+#### /extract_metadata_paper_by_DOI/
+- Descripción: Este endpoint se encarga de obtener toda información relevante de un artículo a partir del **DOI**. 
+- Método: **POST**
+- Datos de entrada:
+    - Tipo de dato: **String**
+    - Estructura esperada:
+
+          { "doi": "DOI del artículo, e.g: 10.48550/arXiv.2403.02159"}
+      
+    - Nota: El campo **DOI** es obligatorio.
+- Datos de salida:
+    - Tipo de dato: **JSON**
+    - Ejemplo de salida:
+
+          {"detailed_code":"3-35A",
+           "detailed_name":"Física",
+           "specific_code":"3-5A",
+           "specific_name":"Ciencias físicas",
+           "wide_code":"05-A",
+           "wide_name":"Ciencias naturales, matemáticas y estadísticas",
+           "other_options":["3-35A-Física"]
+          }
+      
+- Código de ejemplo con **requests** en Python:
+
+      import requests
+
+      url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
+      doi_prueba = '10.48550/arXiv.2403.02159'
+      data = {"doi": doi_prueba}
+
+      response = requests.post(url, json=data)
+      print(response.text)
+
 #### Más endpoints en construcción...
   
 ## English
