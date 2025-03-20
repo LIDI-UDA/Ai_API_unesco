@@ -146,7 +146,6 @@ def extractMetadataPaper(config, doi, write2File=False):
     Examples:
     >>> searchPapersByORCID('Path', "010.3390/app15041934", write2File=False)
     '''
-     
     info = Extract_DOI_info(doi,config)
     is_correct, doi = info.validar_doi() #valida si existe el artículo con su DOI
     if is_correct:
@@ -167,7 +166,7 @@ def extractMetadataPaper(config, doi, write2File=False):
             df_writeByDOI.to_json("data_paper.json", orient="records", lines=True)
         else:
             json_data = df_writeByDOI.to_dict(orient='records')
-            return (json_data[0])
+            return (json_data)
     else:
         print(f'DOI: {doi} is incorrect.')
         return None
@@ -195,6 +194,7 @@ def searchAuthorsByAffiliation(_affiliation, config, searchFull=False, write2Fil
     query = f"affiliation-org-name:\"{_affiliation}\""  # Reemplaza "Universidad" con el nombre de la universidad que buscas
     start = 0
     rows = 1000  # Número de resultados por página
+    
     all_researchers = []
 
     # Encabezados de la solicitud
@@ -214,8 +214,7 @@ def searchAuthorsByAffiliation(_affiliation, config, searchFull=False, write2Fil
     if response.status_code == 200:
         data_prime = response.json()
         max_results = data_prime.get("num-found", [])
-        print(max_results)
-        print(searchFull)
+    
         if searchFull:
             df_writeByORCID = pd.DataFrame(columns=['ORCID', 'Name' ,'DOI', 'Title', 'Abstract','Author',  'Issued', 'Published'])
         else:

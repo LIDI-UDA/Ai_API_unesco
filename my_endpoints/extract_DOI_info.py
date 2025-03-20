@@ -144,6 +144,53 @@ class Extract_DOI_info:
             self.scrapMetadatos()
         return _title, _author, _affiliation, _abstract, _issn, _issued, _published 
     
+    def zenodo(self):
+        '''
+        Search all information in Zenodo about a work through DOI
+
+        Parameters:
+            doi (string): Unique identifier of the scientific works.
+
+        Returns:
+            list[str]: String list of works information.
+        '''
+        _title = _abstract = _author = _affiliation = _issn = _issued = _published = None
+        
+        url = f"https://doi.org/{self.doi}"
+        
+        response = requests.get(url, allow_redirects=True)
+         # URL base de la API de Zenodo
+        #base_url = "https://zenodo.org/api/records"
+        
+        if response.status_code == 200:
+            url_zenodo = (response.url).replace('records', 'api/records')
+            # Realizar la solicitud a la API de Zenodo
+            #response = requests.get(f"{url_zenodo}?q=doi:{self.doi}")
+            response = requests.get(url_zenodo)
+            # Verificar si la solicitud fue exitosa
+            if response.status_code == 200:
+                # Convertir la respuesta a JSON
+                datos = response.json()
+                # Verificar si se encontraron resultados
+                #if datos.get('hits', {}).get('hits'):
+                # Obtener el primer resultado (asumiendo que el DOI es único)
+                
+                _title = datos['metadata'].get('title') if _title is None else _title
+                _author =  "; ".join(autor['name'] for autor in datos['metadata'].get('creators', [])) if _author is None else _author
+                _affiliation =  "; ".join(
+                    autor.get('affiliation', '')  # Obtener la afiliación del autor (si existe)
+                    for autor in datos['metadata'].get('creators', [])
+                    if autor.get('affiliation')  # Solo incluir si el autor tiene afiliación
+                ) if _affiliation is None else _affiliation
+                _abstract = datos['metadata'].get('description').replace("<p>","").replace("</p>","") if _abstract is None else _abstract
+                _published = datos['metadata'].get('publication_date') if _published is None else _published
+
+                return _title, _author, _affiliation, _abstract, _issn, _issued, _published 
+            else:
+                return None, None, None, None, None, None, None
+        else:
+            return f"Error al realizar la solicitud: {response.status_code}"
+
     def scrapMetadatos(self):
         '''
         Resolve a DOI to its final URL using the DOI redirection service.
@@ -159,7 +206,8 @@ class Extract_DOI_info:
         response = requests.get(url, allow_redirects=True)
         
         if response.status_code == 200:
-            _title = _author = _abstract = _issn  = _issued = _published = ''
+            _title = _author = _affiliation = _abstract = _issn  = _issued = _published = ''
+            
             if ('ejgo' in response.url):
                 url = response.url  # Devuelve la URL final después de las redirecciones
                 # Realizar la solicitud HTTP
@@ -230,6 +278,7 @@ class Extract_DOI_info:
                 except Exception as e:
                     print(f"Error inesperado: {e}")
                     return None
+                
             return _title, _author, _affiliation, _abstract, _issn, _issued, _published 
 
 
@@ -278,6 +327,8 @@ class Extract_DOI_info:
                             _title, _author, _affiliation, _abstract, _issn, _issued, _published = self.crossRef()
             elif('arXiv' in self.doi):
                 _title, _author, _affiliation, _abstract, _issn, _issued, _published = self.scrapMetadatos()
+            elif('zenodo' in self.doi):
+                _title, _author, _affiliation, _abstract, _issn, _issued, _published = self.zenodo()
             else:
                 return None, None, None, None, None, None, None #no existe el doi
             return _title, _author, _affiliation, _abstract, _issn, _issued, _published 

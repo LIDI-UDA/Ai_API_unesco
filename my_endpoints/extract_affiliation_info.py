@@ -135,14 +135,9 @@ class Extract_affiliation_info:
         # Parámetros de la solicitud
         params = {
             #'query': f'AF-ID({"\"{affiliation}\" 60108706"}) AND PUBDATETXT("{_fromDate}" OR "{_toDate}")  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
-            # 'query': f'AF-ID({"\"{self.affiliation}\" 60108706"}) AND PUBDATETXT({_dateString})  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
-            # 'apiKey': apiKey_elsevier,
-            # 'count' : 200,
-            # 'httpAccept': 'application/json'
-            'query': f'AF-ID("{self.affiliation} 60108706") AND PUBDATETXT({_dateString}) '
-             f'AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
+            'query': f'AF-ID({"\"{self.affiliation}\" 60108706"}) AND PUBDATETXT({_dateString})  AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp") OR LIMIT-TO(DOCTYPE,"ch") OR LIMIT-TO(DOCTYPE,"re"))',
             'apiKey': apiKey_elsevier,
-            'count': 200,
+            'count' : 200,
             'httpAccept': 'application/json'
         }
 
@@ -206,7 +201,6 @@ class Extract_affiliation_info:
             # Convertir las fechas a objetos datetime
             start = 0
             rows = 1000  # Número de resultados por página
-            #rows = 100  # Número de resultados por página
             all_researchers = []
 
             # Encabezados de la solicitud
@@ -286,7 +280,7 @@ class Extract_affiliation_info:
                                                     if self.affiliation in org_name:
                                                         new_row = [_doi, _title, author, abstract, issn, _issued, _published]
                                                         df_writeByAff = pd.concat([df_writeByAff, pd.DataFrame([new_row], columns=df_writeByAff.columns)], ignore_index=True)
-                                                        print(df_writeByAff)
+                                                        
                     # Verificar si hay más resultados
                     if len(researchers) < rows or start + rows >= max_results:
                         return df_writeByAff 
@@ -297,7 +291,3 @@ class Extract_affiliation_info:
                     print(f"Error en la solicitud: {response.status_code}")
                     print(response.text)
                     break # Detener si hay un error    
-                            
-
-       
-        
