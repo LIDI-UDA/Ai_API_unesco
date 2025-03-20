@@ -166,7 +166,7 @@ def extractMetadataPaper(config, doi, write2File=False):
             df_writeByDOI.to_json("data_paper.json", orient="records", lines=True)
         else:
             json_data = df_writeByDOI.to_dict(orient='records')
-            return (json_data)
+            return (json_data[0])
     else:
         print(f'DOI: {doi} is incorrect.')
         return None
