@@ -113,7 +113,7 @@ Al lanzar el servicio, estarán disponibles los siguientes **Endpoints**:
 
       import requests
 
-      url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
+      url = "http://127.0.0.1:8001/classify_by_doi/"
       doi_prueba = '10.48550/arXiv.2403.02159'
       data = {"doi": doi_prueba}
 
@@ -468,7 +468,7 @@ Once the service is running, the following **Endpoints** will be available:
 
       import requests
 
-      url = "[http://127.0.0.1:8001/classify/](http://127.0.0.1:8001/classify_by_doi/)"
+      url = "http://127.0.0.1:8001/classify_by_doi/"
       test_doi = '10.48550/arXiv.2403.02159'
       data = {"doi": test_doi}
 
